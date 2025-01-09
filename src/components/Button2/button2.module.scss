@@ -1,0 +1,33 @@
+@use '../../styles/_var' as var;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 128px 12px;
+  border: 1px solid var.$gold;
+  background: transparent;
+  color: var.$gray;
+  font-family: var.$font-jura;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  // transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.5;
+    border: transparent;
+    background: var.$button-gradient;
+    color: var.$purple;
+  }
+  &:active {
+    border: 1px solid var.$gold;
+    opacity: 1;
+    background: var.$button-gradient;
+    color: var.$black;
+  }
+}

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Michroma';
+  src: url('/fonts/Michroma-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Jura';
+  src: url('/fonts/Jura-Regular.ttf');
+}
+
+$bg-dark-gradient: linear-gradient(174.62deg, #13071e 27.24%, #1e083b 95.87%);
+$bg-primary-gradient: linear-gradient(146.2deg, #131112 18.13%, #210644 69.95%);
+$button-gradient: linear-gradient(
+  138.69deg,
+  #8a401b -23.71%,
+  #fbe67b 14.22%,
+  #fcfbe7 62.23%,
+  #f7d14e 101.96%,
+  rgb(212, 160, 65) 113.31%
+);
+$block-gradient: linear-gradient(107.35deg, #150528 -6.25%, #1f073c 51.11%, #150528 96.07%);
+$line-gradient: linear-gradient(135deg, rgb(249, 214, 145), rgb(210, 156, 104));
+$card-gradient: linear-gradient(180deg, rgba(34, 9, 62, 0.2) 60.54%, rgba(213, 207, 221, 0.2) 100%),
+  #1b0c2c;
+
+$black: #06010c;
+$white: #ffffff;
+$gray: #d2cdd8;
+$dark-blue: #1f073c;
+$violet: #382748;
+$dark-purple: #14071f;
+$purple: #8f839d;
+$cold-yellow: #fff5cf;
+$yellow: #f9d691;
+$gold: #f1bc87;
+
+$font-michroma: 'Michroma', 'Montserrat', Arial, Helvetica, sans-serif;
+$font-montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
+$font-jura: 'Jura', Arial, Helvetica, sans-serif;

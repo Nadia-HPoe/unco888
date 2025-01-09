@@ -1,0 +1,141 @@
+@use '../../styles/_var' as var;
+
+.banner {
+  position: relative;
+  color: var.$gray;
+  font-style: normal;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: -109px;
+  background: url('/images/Banner1/background.jpg');
+  z-index: -1;
+  height: 1142px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.container {
+  padding: 98px 158px 56px;
+}
+
+.title {
+  font-family: var.$font-michroma;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 120%;
+  text-transform: uppercase;
+  & > span {
+    color: var.$white;
+  }
+}
+
+.subtitle {
+  padding: 36px 0;
+  font-family: var.$font-montserrat;
+  font-weight: 400;
+  font-size: clamp(2.063rem, 2.708vw - 0.375rem, 2.875rem);
+  line-height: 100%;
+  letter-spacing: 0.1em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: var.$font-montserrat;
+  padding-bottom: clamp(9.375rem, 12.708vw - 2.063rem, 13.188rem);
+  gap: 45px;
+}
+
+.card_left,
+.card_right {
+  padding: 48px 120px 28px 82px;
+  width: clamp(37.5rem, 37.578vw + 3.656rem, 48.75rem);
+  border: 2px solid transparent;
+
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transition: 0.3 all;
+    box-shadow: 0px 0px 20px 10px rgba(255, 247, 202, 0.698);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.card_left {
+  border-radius: 150px 12px;
+  background:
+    var.$block-gradient padding-box,
+    linear-gradient(
+        0deg,
+        rgba(25, 5, 48, 1) 56%,
+        rgba(249, 214, 145, 1) 86%,
+        rgba(210, 156, 104, 1) 100%
+      )
+      border-box;
+}
+
+.card_right {
+  background:
+    var.$button-gradient padding-box,
+    linear-gradient(
+        16deg,
+        rgba(251, 241, 180, 1) 56%,
+        rgba(249, 214, 145, 1) 86%,
+        rgba(210, 156, 104, 1) 100%
+      )
+      border-box;
+  color: var.$black;
+  border-radius: 12px 150px;
+}
+.card_title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 140%;
+}
+.card_text {
+  padding: 28px 0 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.card_links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
+.card_link {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  transition: all 0.4s ease;
+  &:hover,
+  &:active {
+    color: var.$purple;
+    text-decoration: underline;
+  }
+}
+
+.card_button {
+  margin-top: 6px;
+  border: none;
+  background: transparent;
+}
+.card_arrow {
+  cursor: pointer;
+}
+
+.text {
+  font-family: var.$font-montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}

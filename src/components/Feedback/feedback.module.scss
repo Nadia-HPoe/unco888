@@ -1,0 +1,128 @@
+@use '../../styles/_var' as var;
+
+.container {
+    max-width: 1920px;
+    background: var.$bg-primary-gradient;
+    margin: 0 auto;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.title {
+    padding-bottom: 20px;
+    color: var.$gray;
+    text-align: center;
+    font-family: var.$font-michroma;
+    font-size: clamp(2.813rem, 1.042vw + 1.875rem, 3.125rem);
+    font-weight: 400;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.line {
+    max-width: 1053px;
+    margin: 0 auto;
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(
+      to right,
+      rgba(246, 243, 243, 0),
+      rgb(239, 212, 142, 0.75),
+      rgba(247, 240, 240, 0)
+    );
+  }
+
+.subtitle {
+    padding: 10px 0;
+    color: var.$gray;
+    text-align: center;
+    font-family: var.$font-montserrat;
+    font-size: clamp(2.25rem, 2.083vw + 0.375rem, 2.875rem);
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 4.6px;
+}
+
+.cards {
+    margin-top: 10px;
+    display: flex;
+    gap: 18px;
+    max-width: 1727px;
+    &__viewport {
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        justify-content: center;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        border: 1px solid var.$gold;
+        background-color: transparent;
+        transform: rotate(-45deg);
+        position: relative;
+        cursor: pointer;
+        &:after {
+            content: '';
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+        &:first-child:after {
+            background: url('/images/Feedback/arrow-left.svg') center / contain no-repeat;
+        }
+        &:last-child:after {
+            background: url('/images/Feedback/arrow-right.svg') center / contain no-repeat;
+        }
+    }
+}
+
+.button {
+    width: 376px;
+    height: 68px;
+    margin: 0 auto;
+    font-size: clamp(16px, 1.302vw, 25px);
+}
+
+
+
+@media (max-width: 1440px) {
+    .container {
+        gap: 45px;
+    }
+    .title {
+        font-size: clamp(1.75rem, 2.5vw + 0.563rem, 2.813rem);
+    }
+    .subtitle {
+        font-size: clamp(1.75rem, 1.176vw + 1.191rem, 2.25rem);
+        letter-spacing: 3.6px;
+    }
+    .cards {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 425px) {
+
+}
+
+
+

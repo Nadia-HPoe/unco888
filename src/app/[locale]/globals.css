@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --desktop-width: 1920px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}

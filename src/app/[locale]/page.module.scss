@@ -1,0 +1,65 @@
+@use '../../styles/var' as var;
+.main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.notfound {
+  height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: var.$bg-primary-gradient;
+  font-family: var.$font-montserrat;
+  font-style: normal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .notfound_image {
+    height: clamp(10.375rem, 10.915vw + 7.714rem, 20.813rem);
+    width: clamp(15.625rem, 16.275vw + 11.658rem, 31.188rem);
+  }
+
+  .notfound_title {
+    color: var.$white;
+    font-size: clamp(3rem, 1.438vw + 2.65rem, 4.375rem);
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .notfound_text {
+    padding: 20px 0 clamp(5rem, 3.464vw + 4.156rem, 8.313rem);
+    font-size: clamp(1rem, 0.784vw + 0.809rem, 1.75rem);
+    font-weight: 400;
+    line-height: 34px;
+    color: #ebe6f999;
+  }
+
+  .notfound_button {
+    width: clamp(13.875rem, 1.961vw + 13.397rem, 15.75rem);
+    height: clamp(2.75rem, 0.654vw + 2.591rem, 3.375rem);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 35px;
+    text-transform: none;
+  }
+}
+// @media (max-width: 1919px) {
+//   .main {
+//     max-width: 1440px;
+//   }
+// }
+// @media (max-width: 1439px) {
+//   .main {
+//     width: 760px;
+//   }
+// }
+// @media (max-width: 759px) {
+//   .main {
+//     width: 390px;
+//   }
+// }

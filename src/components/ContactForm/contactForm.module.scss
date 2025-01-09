@@ -1,0 +1,240 @@
+@use "../../styles/var" as *;
+
+.main_container_contact_form {
+  background: rgba(187, 185, 185, 0.007);
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.wrapper_contact_form {
+  display: flex;
+  flex-direction: column;
+  color: $gray;
+  align-items: center;
+  width: 321px;
+  height: 472px;
+  border-radius: 14px;
+  background: $bg-primary-gradient;
+  font-family: $font-montserrat;
+  align-self: center;
+  justify-self: center;
+}
+
+.container_contact_form {
+  width: 271px;
+  height: 432px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  align-self: flex-end;
+  margin-right: 45px;
+  margin-top: 20px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #d2cdd8;
+    width: 100%;
+    height: 3px;
+  }
+
+  &::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+.container_name {
+  width: 260px;
+  height: 105px;
+  margin-bottom: -15px;
+}
+
+.btn {
+  width: 260px;
+  height: 54px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.name {
+  background: $gray;
+  border-radius: 6px;
+  width: 260px;
+  height: 38px;
+  margin-top: 10px;
+  font-family: $font-montserrat;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.message {
+  width: 260px;
+  height: 152px;
+  background: $gray;
+  border-radius: 8px;
+  resize: none;
+  margin-top: 10px;
+  font-family: $font-montserrat;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container_agree {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+}
+
+.agree {
+  display: flex;
+  flex-direction: row;
+  background: $gray;
+  cursor: pointer;
+  position: absolute;
+  grid-column: 1;
+  &:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: $gray;
+    position: absolute;
+    opacity: 1;
+    border-radius: 2px;
+  }
+  &:checked::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 8px;
+    border: solid rgb(0, 0, 0);
+    border-width: 0 2px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 5px;
+  }
+}
+
+.text_label {
+  grid-column: 2;
+  position: relative;
+  margin-left: 10%;
+}
+
+@media (min-width: 1440px) {
+  .wrapper_contact_form {
+    font-size: 14px;
+    width: 399px;
+    height: 678.94px;
+    border-radius: 12px;
+  }
+  .container_contact_form {
+    width: 359px;
+    height: 650px;
+    margin-top: 45px;
+  }
+
+  .close {
+    width: 24px;
+    height: 24px;
+    margin-right: 33px;
+    margin-top: 30px;
+
+    &::before,
+    &::after {
+      width: 100%;
+      height: 3px;
+    }
+  }
+
+  .container_text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    text-align: left;
+  }
+
+  .container_name {
+    width: 359px;
+    height: 129px;
+    margin-bottom: -15px;
+  }
+
+  .btn {
+    width: 360px;
+    height: 54px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .name {
+    width: 359px;
+    height: 54px;
+    padding: 10px;
+  }
+
+  .message {
+    width: 359px;
+    height: 308px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .container_agree {
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    width: 271px;
+    height: 39px;
+  }
+
+  .agree {
+    margin-top: 7px;
+  }
+
+  .agree {
+    &:before {
+      width: 16px;
+      height: 16px;
+    }
+    &:checked::after {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 8px;
+      border: solid rgb(0, 0, 0);
+      border-width: 0 2px 1px 0;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 2px;
+      left: 5px;
+    }
+  }
+
+  .text_label {
+    grid-column: 2;
+    position: relative;
+    margin-left: 10%;
+  }
+}

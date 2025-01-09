@@ -1,0 +1,103 @@
+@use '../../styles/_var' as var;
+
+.container {
+  max-width: 1920px;
+  background: var.$bg-primary-gradient;
+  margin: 0 auto;
+  padding: 100px 215px 84px;
+}
+
+.title {
+  padding-bottom: 143px;
+  font-family: var.$font-montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var.$gray;
+  & > span {
+    font-family: var.$font-michroma;
+    font-size: 45px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 465px);
+  grid-gap: clamp(0.625rem, 4.167vw - 3.125rem, 1.875rem);
+  justify-items: center;
+  justify-content: center;
+
+  .item:last-child {
+    grid-column: span 3;
+  }
+
+  .item {
+    height: 314px;
+    position: relative;
+    text-align: center;
+
+    .image {
+      object-fit: cover;
+      border-radius: 12px;
+      filter: drop-shadow(4px 4px 20px rgba(255, 247, 202, 0.37));
+    }
+  }
+  .button {
+    background-color: var.$dark-blue;
+    border-radius: 0 0 12px 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    font-family: var.$font-montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 100%;
+    text-decoration: none;
+    color: var.$gray;
+    letter-spacing: 0.1em;
+    transition: transform 0.5s ease-in-out;
+    & > span {
+      font-family: var.$font-michroma;
+      line-height: 120%;
+    }
+    &:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    padding: 130px 240px 267px;
+  }
+
+  .title {
+    padding-bottom: 45px;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 465px);
+    grid-gap: 30px;
+
+    // .item:first-child {
+    //   grid-column: span 2;
+    // }
+    .item:last-child {
+      grid-column: span 1;
+    }
+  }
+}
