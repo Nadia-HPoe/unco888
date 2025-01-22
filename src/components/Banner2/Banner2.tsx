@@ -1,7 +1,7 @@
-import Button from "../Button/Button";
-import Image from "next/image";
-import styles from "./banner2.module.scss";
-import { useTranslations } from "next-intl";
+import Button from '../Button/Button';
+import Image from 'next/image';
+import styles from './banner2.module.scss';
+import { useTranslations } from 'next-intl';
 
 function Banner2() {
   const t = useTranslations('banner2');
@@ -11,7 +11,7 @@ function Banner2() {
       <h2 className={styles.title}>
         <Image
           className={styles.icon}
-          src='/images/Header/logo-apple.png'
+          src='/images/BuyAndSell/logo.png'
           alt='icon-apple'
           width={50}
           height={50}

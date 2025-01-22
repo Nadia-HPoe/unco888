@@ -1,0 +1,94 @@
+@use '../../../styles/_var' as var;
+
+.card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  width: 380px;
+  background: var.$card-gradient;
+  opacity: 0.8;
+  border: 1px solid var.$gold;
+  border-radius: 12px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  &__image {
+    padding: 22px 30px;
+
+    border-radius: 9.61393px;
+    border: 1px solid var.$gold;
+  }
+
+  &__title {
+    font-family: var.$font-michroma;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 140%;
+
+    display: flex;
+    align-items: center;
+    color: var.$gray;
+
+    span {
+      color: var.$white;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0;
+    font-family: var.$font-montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    text-align: left;
+    color: #fefeda;
+  }
+
+  &__price {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 19px;
+  }
+
+  &__numbers {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30.8px;
+    span {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+
+.button {
+  width: 154px;
+  height: 38px;
+}

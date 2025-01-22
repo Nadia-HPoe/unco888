@@ -1,0 +1,65 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.325);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.6s ease-out forwards;
+    &.closing {
+        animation: fadeOut 0.6s ease-in forwards;
+    }
+}
+
+.content {
+    border-radius: 14px;
+    animation: slideIn 0.6s ease-out forwards;
+    &.closing {
+        animation: slideOut 0.6s ease-in forwards;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+        background-color: rgba(255, 255, 255, 0.325);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(255, 255, 255, 0.325);
+    }
+    to {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.modalContent {
+    position: relative;
+}

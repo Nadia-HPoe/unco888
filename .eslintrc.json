@@ -11,7 +11,6 @@
     ".next/"
   ],
   "rules": {
-    "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "@next/next/no-html-link-for-pages": "off",

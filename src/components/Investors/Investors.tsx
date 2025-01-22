@@ -8,6 +8,8 @@ function Investors() {
   return (
     <section className={styles.container} id='investors'>
       <h2 className={styles.title}>{t('title')}</h2>
+      <h2 className={styles.title_mobile}>{t('title_1')}</h2>
+      <h2 className={styles.title_mobile}>{t('title_2')}</h2>
       <hr className={styles.line}></hr>
       <h3 className={styles.subtitle}>{t('subtitle_1')}</h3>
       <h3 className={styles.subtitle}>{t('subtitle_2')}</h3>
@@ -15,6 +17,7 @@ function Investors() {
         <div className={styles.card_left}>
           <p className={styles.card_text}>{t('cards.card_1')}</p>
         </div>
+        <div className={styles.flare2}></div>
         <div className={styles.card_right}>
           <div className={styles.card}>
             <p className={styles.card_text}>{t('cards.card_2')}</p>

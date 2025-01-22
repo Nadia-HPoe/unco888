@@ -3,8 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './banner1.module.scss';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 function Banner1() {
+  const t = useTranslations('banner1');
   const [arrowHover, setArrowHover] = useState(false);
 
   return (
@@ -13,19 +15,13 @@ function Banner1() {
         <h1 className={styles.title}>
           NFT UNCO<span>888</span>
         </h1>
-        <h3 className={styles.subtitle}>
-          Bearer option contract for stock of “UNCO Corp.” with NFT avatar
-        </h3>
+        <h3 className={styles.subtitle}>{t('subtitle')}</h3>
         <div className={styles.wrapper}>
           <div className={styles.card_left}>
-            <h4 className={styles.card_title}>C-Level</h4>
-            <p className={styles.card_text}>
-              SPECIAL OFFER for “c-level” in Finance or Food Retail/ production/distribution.
-              Profitable innovation, a seat on the Board and income with “UNCO Food Futures”
-              products
-            </p>
+            <h4 className={styles.card_title}>{t('card_1.subtitle')}</h4>
+            <p className={styles.card_text}>{t('card_1.text')}</p>
             <Link className={styles.card_links} href='#clevel'>
-              <p className={styles.card_link}>More details</p>
+              <p className={styles.card_link}>{t('card_1.link')}</p>
               <button
                 className={styles.card_button}
                 onMouseEnter={() => setArrowHover(true)}
@@ -42,13 +38,11 @@ function Banner1() {
             </Link>
           </div>
           <div className={styles.card_right}>
-            <h4 className={styles.card_title}>Pree - seed</h4>
-            <p className={styles.card_text}>PreSeed. 4X+ in the next round*. </p>
-            <p className={styles.card_text}>
-              RWA Fintech: service for micro-investments in retail food.
-            </p>
+            <h4 className={styles.card_title}>{t('card_2.subtitle')}</h4>
+            <p className={styles.card_text}>{t('card_2.text')}</p>
+            <p className={styles.card_text}>{t('card_2.text_2')}</p>
             <Link className={styles.card_links} href='#investors'>
-              <p className={styles.card_link}>More details</p>
+              <p className={styles.card_link}>{t('card_2.link')}</p>
               <button
                 className={styles.card_button}
                 onMouseEnter={() => setArrowHover(true)}
@@ -69,16 +63,7 @@ function Banner1() {
             </Link>
           </div>
         </div>
-        <p className={styles.text}>
-          NFT "UNCO888" and this website and all information there are for marketing purposes
-          only.This website does not constitute a public offer. When exchanging for company shares,
-          KYC is a mandatory procedure. UNCO Corp. and the UNCO Board have the right to refuse
-          anyone and at any time the opportunity to become the owner of NFT "UNCO888" without giving
-          any reason. All details are specified in the contract, which is an integral part of the
-          NFT. If you have any questions feel free to contact the support service. This website is
-          under development, the texts are being refined and corrected. Under no circumstances can
-          this website be considered as investment advice, decision-making information, etc.
-        </p>
+        <p className={styles.text}>{t('text')}</p>
       </div>
     </section>
   );

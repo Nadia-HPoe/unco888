@@ -1,4 +1,4 @@
-@use "../../styles/_var" as var;
+@use '../../styles/_var' as var;
 
 .button {
   display: flex;
@@ -35,20 +35,14 @@
   }
 }
 
-@media (max-width: 390px) {
-  .button {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 391px) and (max-width: 760px) {
+@media (max-width: 1440px) {
   .button {
     font-size: 20px;
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 390px) {
   .button {
-    font-size: 25px;
+    font-size: 16px;
   }
 }

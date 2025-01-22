@@ -8,7 +8,7 @@ import Link from 'next/link';
 function Services() {
   const t = useTranslations('services');
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id='services'>
       <h2 className={styles.title}>
         <span>UNCO</span> {t('title')}
       </h2>

@@ -1,33 +1,37 @@
 "use client";
+import { name } from "eslint-plugin-prettier/recommended";
 import Button from "../Button/Button";
 import styles from "./contactForm.module.scss";
 import { useTranslations } from "next-intl";
 import { ChangeEvent, useState } from "react";
 
-const ContactForm = () => {
+type ContactFormProps = {
+    onClose: () => void; 
+    name?: string;
+};
+
+const ContactForm: React.FC<ContactFormProps> = ({ onClose, name }) => {
     const t = useTranslations('contactForm');
-
     const [isAgreed, setIsAgreed] = useState<boolean>(false);
-    const [visibleWindow, setIsVisibleWindow] = useState<boolean>(true);
 
-    const handleClickClose = () => {
-        setIsVisibleWindow(false);
-    }
+    const handleCloseClick = (e: React.MouseEvent) => {
+        e.preventDefault(); 
+        onClose();
+    };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setIsAgreed(event.target.checked);
     };
 
-    if (!visibleWindow) return null;
-
     return (
         <form className={styles.main_container_contact_form}>
             <div className={styles.wrapper_contact_form}>
-                <button className={styles.close} onClick={handleClickClose} />
+                <button className={styles.close} onClick={handleCloseClick} />
                 <div className={styles.container_contact_form}>
                     <div className={styles.container_name}>
                         <p className={styles.container_text}>{t('labelName')}</p>
-                        <input placeholder={t('placeholderName')} type='text' className={styles.name} />
+                        <input placeholder={t('placeholderName')} type='text' className={styles.name} defaultValue={name}/>
+
                     </div>
 
                     <div className={styles.container_message}>

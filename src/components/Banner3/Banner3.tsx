@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 function Banner3() {
   const t = useTranslations('banner3');
   return (
-    <div className={styles.banner3}>
+    <div className={styles.banner3} id='uff'>
       <h1>{t('title')}</h1>
       <div className={styles.container}>
         <div className={styles.star}></div>

@@ -101,3 +101,50 @@
     }
   }
 }
+
+@media (max-width: 1106px) {
+  .title {
+    font-size: 36px; 
+    & > span {
+      font-size: 39px;
+    }
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 100px 20px 267px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 28px;
+    & > span {
+      font-size: 26px;
+    }
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 350px);
+    grid-gap: 20px;
+
+    .item {
+      width: 350px;
+      height: 311px;
+    }
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .button {
+      width: 100%;
+      height: 46px;
+    }
+  }
+}

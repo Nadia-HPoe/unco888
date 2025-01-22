@@ -34,7 +34,7 @@ function News() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='news'>
       <h2 className={styles.title}>
         <span>UNCO</span> {t('title')}
       </h2>
