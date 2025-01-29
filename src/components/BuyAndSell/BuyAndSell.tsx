@@ -56,14 +56,19 @@ function BuyAndSell() {
   return (
     <div className={styles.container} id='buy'>
       <h2 className={styles.title}>
-        {t('title')}
+        {t('title')}{' '}
         <span className={styles.subtitle}>
           UNCO<span>888</span>
         </span>
       </h2>
       <p className={styles.disclaimer}>{t('disclaimer')}</p>
       <div className={styles.cards__wrapper}>
-        <button className={styles.cards__button} onClick={handlePrev}></button>
+        <div className={styles.cards__buttonDesktopContainer}>
+          <button
+            className={`${styles.cards__button} ${styles.cards__button_left}`}
+            onClick={handlePrev}
+          ></button>
+        </div>
         <div className={styles.cards__viewport}>
           <div
             ref={sliderRef}
@@ -75,12 +80,29 @@ function BuyAndSell() {
             ))}
           </div>
         </div>
-        <button className={styles.cards__button} onClick={handleNext}></button>
+        <div className={styles.cards__buttonDesktopContainer}>
+          <button
+            className={`${styles.cards__button} ${styles.cards__button_right}`}
+            onClick={handleNext}
+          ></button>
+        </div>
+      </div>
+      <div className={styles.cards__buttonTabletContainer}>
+        <button
+          className={`${styles.cards__button} ${styles.cards__button_left}`}
+          onClick={handlePrev}
+        ></button>
+        <button
+          className={`${styles.cards__button} ${styles.cards__button_right}`}
+          onClick={handleNext}
+        ></button>
       </div>
 
-      <button className={styles.button} onClick={handleOpenModal}>
-        {t('button_text')}{' '}
-      </button>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={handleOpenModal}>
+          {t('button_text')}{' '}
+        </button>
+      </div>
 
       <ModalComponent isOpen={isModalOpen} onRequestClose={handleCloseModal}>
         <SellForm onClose={handleCloseModal} />

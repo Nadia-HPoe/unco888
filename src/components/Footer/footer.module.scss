@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 59px;
-  margin-right: 158px;
+  margin-right: 70px;
   flex-grow: 1;
 }
 
@@ -89,6 +89,7 @@
   font-family: var.$font-michroma;
   font-size: 20px;
   font-weight: 400;
+  line-height: 32px;
   display: flex;
   gap: 18px;
   text-decoration: none;
@@ -104,6 +105,7 @@
   font-family: var.$font-michroma;
   font-size: 20px;
   font-weight: 400;
+  line-height: 32px;
   display: flex;
   gap: 18px;
   text-decoration: none;
@@ -133,7 +135,7 @@
 
 .nav {
   display: flex;
-  gap: 150px;
+  gap: clamp(6.25rem, 10.438vw - 4rem, 9.375rem);
 }
 .nav_mobile {
   display: none;
@@ -147,7 +149,7 @@
 .link {
   color: var.$white;
   font-family: var.$font-montserrat;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 0.835vw + 0.498rem, 1.5rem);
   font-weight: 400;
   line-height: 140%;
   text-decoration: none;
@@ -216,7 +218,7 @@
     justify-content: flex-start;
   }
   .nav {
-    gap: clamp(5rem, 10.401vw + 0.014rem, 9.375rem);
+    gap: clamp(1.875rem, 29.167vw - 14.531rem, 6.25rem);
   }
   .contacts {
     gap: 18px;
@@ -242,7 +244,7 @@
 
 @media (max-width: 900px) {
   .footer {
-    padding: 62px 78px 30px;
+    padding: 62px clamp(1.25rem, 12.889vw - 2.375rem, 4.875rem) 30px;
   }
   .container {
     gap: 24px;
@@ -299,10 +301,67 @@
 
   .logo_big {
     display: block;
-    width: 197px;
-    height: 197px;
+    width: clamp(3.688rem, 30.667vw - 4.938rem, 12.313rem);
+    height: clamp(3.688rem, 30.667vw - 4.938rem, 12.313rem);
   }
   .logo {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer {
+    padding: 60px 16px;
+  }
+  .logo_big {
+    display: none;
+  }
+
+  .logo {
+    display: block;
+    width: 59px;
+    height: 59px;
+    top: -9px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 130%;
+    letter-spacing: 0.1em;
+    gap: 8px;
+  }
+  .contacts {
+    gap: 28px;
+    padding-right: 0;
+  }
+
+  .address {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    width: 80%;
+  }
+
+  .socials__link {
+    width: clamp(2.188rem, 5vw + 1.094rem, 2.5rem);
+    height: clamp(2.188rem, 5vw + 1.094rem, 2.5rem);
+  }
+  .socials__icon_6 {
+    width: clamp(2.813rem, 5vw + 1.719rem, 3.125rem);
+  }
+
+  .nav_mobile {
+    padding: 40px 4px 0;
+    gap: 9px;
+    & > li {
+      padding-top: 8px;
+    }
+  }
+  .line {
+    display: none;
+  }
+  .link {
+    font-size: 16px;
+    line-height: 22.4px;
   }
 }

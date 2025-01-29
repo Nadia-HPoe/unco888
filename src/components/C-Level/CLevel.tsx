@@ -30,8 +30,9 @@ function CLevel() {
           </div>
         </div>
       </div>
+      <span className={styles.star}>
       <div className={styles.flare}></div>
-
+</span>
       <div className={styles.buttons}>
         <Button link='' text={t('buttons.button_1')} />
         <Button2 link='' text={t('buttons.button_2')} />

@@ -46,25 +46,28 @@
 }
 
 .cards {
-    margin-top: 10px;
     display: flex;
     gap: 18px;
-    max-width: 1727px;
+    transition: transform 0.3s ease-in-out;
     &__viewport {
         overflow: hidden;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
+        width: 100%;
+        max-width: 1727px;
     }
     &__wrapper {
+        margin-top: 10px;
         display: flex;
         align-items: center;
         gap: 20px;
-        overflow: hidden;
         justify-content: center;
     }
-    &__button {
+    &__button,
+    &__btn {
         display: flex;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
         width: 36px;
@@ -81,21 +84,25 @@
             height: 18px;
             position: absolute;
             transform: rotate(45deg);
+            background: url('/images/Feedback/arrow-right.svg') center / contain no-repeat;
         }
         &:first-child:after {
             background: url('/images/Feedback/arrow-left.svg') center / contain no-repeat;
         }
-        &:last-child:after {
-            background: url('/images/Feedback/arrow-right.svg') center / contain no-repeat;
+        &:disabled {
+            opacity: 0.5;
+            cursor: default;
         }
+    }
+    &__btns {
+        display: none;
     }
 }
 
-.button {
+.review {
     width: 376px;
     height: 68px;
     margin: 0 auto;
-    font-size: clamp(16px, 1.302vw, 25px);
 }
 
 
@@ -112,17 +119,69 @@
         letter-spacing: 3.6px;
     }
     .cards {
-        margin-top: 30px;
+        &__wrapper {
+            margin-top: 30px;
+        }
+        &__viewport {
+            max-width: 1230px;
+        }
     }
 }
 
 @media (max-width: 767px) {
-
+    .container {
+        padding: 60px 20px;
+        gap: 30px;
+    }
+    .title {
+        font-size: clamp(1.375rem, 1.622vw + 0.98rem, 1.75rem);
+    }
+    .subtitle {
+        font-size: clamp(1.375rem, 1.622vw + 0.98rem, 1.75rem);
+        line-height: 130%;
+        letter-spacing: 2.8px;
+    }
+    .cards {
+        gap: 10px;
+        &__wrapper {
+            margin-top: 0;
+            flex-direction: column;
+            gap: 30px;
+        }
+        &__button {
+            display: none;
+        }
+        &__btns {
+            height: 50px;
+            width: 100%;
+            padding: 0 65px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+    }
+    .button {
+        width: clamp(21.875rem, 64.865vw + 6.064rem, 36.875rem);
+        height: 54px;
+    }
 }
 
 @media (max-width: 425px) {
-
+    .container {
+        padding: 40px 20px;
+        gap: 60px;
+    }
+    .subtitle {
+        letter-spacing: 2.2px;
+    }
+    .cards {
+        &__btns {
+            display: none;
+        }
+    }
+    .button {
+        width: 100%;
+        height: 54px;
+    }
 }
-
-
-

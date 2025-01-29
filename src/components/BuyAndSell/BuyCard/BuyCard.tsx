@@ -36,8 +36,8 @@ function BuyCard({ quantity, price }: BuyCardProps) {
               <span> usdt</span>
             </p>
           </div>
-          <div className={styles.button}>
-            <Button text={t('card.button')} link='' />
+          <div className={styles.buttonContainer}>
+            <Button text={t('card.button')} link='' className={styles.button} />
           </div>
         </div>
       </div>

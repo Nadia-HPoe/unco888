@@ -11,7 +11,7 @@
   top: -109px;
   background: url('/images/Banner1/background.jpg');
   z-index: -1;
-  height: 1147px;
+  height: 1260px;
   width: 100%;
   background-repeat: no-repeat;
   background-position: top;
@@ -150,7 +150,7 @@
 @media (max-width: 1440px) {
   .banner::after {
     top: -190px;
-    height: 1122px;
+    height: 1192px;
   }
 
   .container {
@@ -206,7 +206,7 @@
   .banner::after {
     background: url('/images/Banner1/background-tablet.png');
     top: -121px;
-    height: 1055px;
+    height: 1115px;
     background-position: top;
     background-size: cover;
   }
@@ -243,7 +243,7 @@
   }
 
   .container {
-    padding: 77px 39px 65px 41px;
+    padding: 73px 39px 65px 41px;
   }
 
   .wrapper {
@@ -291,6 +291,14 @@
   }
 }
 @media (max-width: 390px) {
+  .banner::after {
+    height: 1827px;
+  }
+  .title {
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+  }
   .subtitle {
     padding: 20px 0 136px;
   }

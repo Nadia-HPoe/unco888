@@ -74,10 +74,10 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 19px;
   }
 
   &__numbers {
+    min-width: 145px;
     font-size: 22px;
     font-weight: 500;
     line-height: 30.8px;
@@ -88,7 +88,105 @@
   }
 }
 
-.button {
-  width: 154px;
+.buttonContainer {
+  min-width: 154px;
   height: 38px;
+}
+
+.button {
+  padding: 0 12px;
+}
+
+@media (max-width: 1440px) {
+  .card {
+    &__title {
+      font-size: 28px;
+      line-height: 39.2px;
+      letter-spacing: 0.1em;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &__numbers {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .card {
+    width: 314px;
+
+    &__top {
+      gap: 10px;
+    }
+
+    &__image {
+      padding: 37.5px 14px;
+      img {
+        width: 226px;
+        height: 226px;
+      }
+    }
+    &__title {
+      font-size: 22px;
+      line-height: 22px;
+    }
+
+    &__bottom {
+      gap: 10px;
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 25.2px;
+    }
+    &__numbers {
+      font-size: 18px;
+      line-height: 25.2px;
+    }
+  }
+
+  .buttonContainer {
+    min-width: 113px;
+  }
+  .button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .card {
+    width: 269px;
+    padding: 20.31px 20px;
+
+    &__image {
+      padding: 47.69px 12px;
+      img {
+        width: 205px;
+        height: 205px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+    &__numbers {
+      min-width: 114px;
+    }
+  }
+
+  .buttonContainer {
+    min-width: 100px;
+  }
 }

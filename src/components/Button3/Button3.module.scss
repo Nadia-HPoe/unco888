@@ -1,0 +1,51 @@
+@use "../../styles/var" as *;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px 128px;
+  border: 1px solid $yellow;
+  background: $button-gradient;
+  cursor: pointer;
+  color: $black;
+  font-family: $font-jura;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.5;
+    color: $purple;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    border: 1px solid $gold;
+    background: transparent;
+    background: linear-gradient(180deg, #f1bc87 23.96%, #ffe998 143.75%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (max-width: 1440px) {
+  .button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  .button {
+    font-size: 16px;
+  }
+}

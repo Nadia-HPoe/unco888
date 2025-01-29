@@ -1,23 +1,36 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './feedback.module.scss';
-import Button from '../Button/Button';
-import FeedbackCard from '../FeedbackCard/FeedbackCard';
+import Button3 from '@/components/Button3/Button3';
+import FeedbackCard from './FeedbackCard/FeedbackCard';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
+import FeedbackPopup from './FeedbackPopup/FeedbackPopup';
 
-function Feedback() {
+interface FeedbackItem {
+  name: string;
+  age: string;
+  text: string;
+}
+
+const toggleBodyScroll = (disable: boolean) => {
+  if (disable) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+};
+
+const Feedback: React.FC = () => {
   const t = useTranslations('feedback');
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 4;
-  const cardWidth = 405 + 18;
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
-  const feedbacks = [
+  const feedbackData: FeedbackItem[] = [
     {
       name: 'Name1',
       age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
+      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. . Nnibh ornare accumsan. Nnibh ornare accumsan.',
     },
     {
       name: 'Name2',
@@ -46,15 +59,40 @@ function Feedback() {
     },
   ];
 
-  const maxIndex = feedbacks.length - visibleCards;
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : prevIndex));
+  const handleScroll = (direction: 'left' | 'right') => {
+    const slider = sliderRef.current;
+    if (slider) {
+      const scrollAmount = slider.offsetWidth / 2;
+      slider.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+  const [selectedFeedback, setSelectedFeedback] = useState<FeedbackItem | null>(null);
+
+  const openPopup = (feedback: FeedbackItem) => {
+    setSelectedFeedback(feedback);
   };
+
+  const closePopup = () => {
+    setSelectedFeedback(null);
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    toggleBodyScroll(!!selectedFeedback);
+    return () => toggleBodyScroll(false);
+  }, [selectedFeedback]);
 
   return (
     <div className={styles.container}>
@@ -64,30 +102,52 @@ function Feedback() {
         <h3 className={styles.subtitle}>{t('subtitle')}</h3>
       </div>
       <div className={styles.cards__wrapper}>
-        <button className={styles.cards__button} onClick={handlePrev}></button>
-        <div className={styles.cards__viewport}>
-          <div
-            ref={sliderRef}
-            className={styles.cards}
-            style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
-          >
-            {feedbacks.map((feedback, index) => (
+        <button
+          className={styles.cards__button}
+          onClick={() => handleScroll('left')}
+          aria-label='Previous'
+        />
+        <div className={styles.cards__viewport} ref={sliderRef}>
+          <div className={styles.cards}>
+            {feedbackData.map((feedback, index) => (
               <FeedbackCard
                 key={index}
                 name={feedback.name}
                 age={feedback.age}
                 text={feedback.text}
+                onClick={() => openPopup(feedback)}
               />
             ))}
           </div>
         </div>
-        <button className={styles.cards__button} onClick={handleNext}></button>
+        <button
+          className={styles.cards__button}
+          onClick={() => handleScroll('right')}
+          aria-label='Next'
+        />
+        <div className={styles.cards__btns}>
+          <button
+            className={styles.cards__btn}
+            onClick={() => handleScroll('left')}
+            aria-label='Previous'
+          />
+          <button
+            className={styles.cards__btn}
+            onClick={() => handleScroll('right')}
+            aria-label='Next'
+          />
+        </div>
       </div>
-      <div className={styles.button}>
-        <Button text={t('button_text')} link='' />
-      </div>
+      <Button3
+        className={`${styles.button} ${styles.review}`}
+        type='button'
+        onClick={openModal}
+        text={t('button_text')}
+      />
+      <FeedbackForm isOpen={isModalOpen} onClose={closeModal} />
+      {selectedFeedback && <FeedbackPopup feedback={selectedFeedback} onClose={closePopup} />}
     </div>
   );
-}
+};
 
 export default Feedback;
