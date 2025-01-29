@@ -1,0 +1,189 @@
+{
+  "header": {
+    "links": {
+      "link_1": "Compra/Vendi",
+      "link_2": "UFF",
+      "link_3": "Presentazione",
+      "link_4": "Notizie",
+      "link_5": "Domande e Risposte",
+      "link_6": "Tabella di Marcia",
+      "link_7": "Eco-Sistema UNCO"
+    },
+    "button": "LE NOSTRE NOTIZIE"
+  },
+  "banner1": {
+    "subtitle": "Opzione su azioni di \"UNCO Corp.\" con avatar NFT",
+    "card_1": {
+      "subtitle": "Livello C",
+      "text": "OFFERTA SPECIALE per dirigenti in finanza o vendita al dettaglio/produzione/distribuzione alimentare. Innovazione redditizia, un posto nel consiglio e benefici con i prodotti \"UNCO Food Futures\"",
+      "link": "Maggiori dettagli"
+    },
+    "card_2": {
+      "subtitle": "Pre-seed",
+      "text": "Pre-seed. 4X+ nel prossimo round*.",
+      "text_2": "RWA Fintech: servizio per micro-investimenti nel settore alimentare al dettaglio.",
+      "link": "Maggiori dettagli"
+    },
+    "text": "L'NFT \"UNCO888\" e questo sito web, così come tutte le informazioni in esso contenute, sono esclusivamente a scopo di marketing. Questo sito non costituisce un'offerta pubblica. Al momento dello scambio con azioni della società, la procedura KYC è obbligatoria. UNCO Corp. e il consiglio di amministrazione di UNCO si riservano il diritto di negare a chiunque, in qualsiasi momento, la possibilità di diventare proprietario dell'NFT \"UNCO888\" senza fornire alcuna motivazione. Tutti i dettagli sono specificati nel contratto, che è parte integrante dell'NFT. Se hai domande, non esitare a contattare il servizio di supporto. Questo sito web è in fase di sviluppo, i testi sono in fase di revisione e correzione. In nessun caso questo sito web può essere considerato come un consiglio di investimento, informazioni per prendere decisioni, ecc."
+  },
+  "banner2": {
+    "title": "NFT UNCO",
+    "card_1": {
+      "subtitle": "Ruolo attivo nel business",
+      "text": "Ogni NFT \"UNCO888\" rappresenta 1 voto nel consiglio di amministrazione di UNCO per il proprietario attuale: per influenzare la strategia e le decisioni aziendali con connessione diretta alla gestione."
+    },
+    "card_2": {
+      "subtitle": "L'NFT \"UNCO888\" cresce con l'azienda!",
+      "text_1": "Combina rendimenti a breve termine con valore a lungo termine.",
+      "text_2": "Fino a 4x+* nel prossimo round* o in P2P",
+      "text_3": "Sempre disponibile per P2P"
+    },
+    "card_3": {
+      "subtitle": "\"UNCO888\" è un contratto di opzione al portatore",
+      "text_1": "Può essere scambiato una volta per azioni della società*",
+      "text_2": "Importante: Al momento dello scambio con azioni della società, la procedura KYC è obbligatoria.*"
+    },
+    "button_text": "Acquista UNCO888"
+  },
+  "news": {
+    "title": "NOTIZIE"
+  },
+  "banner3": {
+    "title": "UNCO Food Futures",
+    "text1": "Cibo fino a due volte più economico",
+    "text2": "Non carta, ma sempre cibo reale",
+    "text3": "È una soluzione per guadagnare ottimizzando la distribuzione di cibo fresco",
+    "text4": "È una soluzione per risparmiare nel commercio al dettaglio di alimenti",
+    "button": "Acquista UNCO888"
+  },
+  "faq": {
+    "title": "Domande e Risposte",
+    "question1": "Qual è la vostra politica di restituzione?",
+    "answer1": "Offriamo una garanzia di rimborso di 30 giorni. Se non sei soddisfatto del tuo acquisto, puoi restituirlo entro 30 giorni per un rimborso completo.",
+    "question2": "Posso annullare o modificare il mio ordine?",
+    "answer2": "Contattaci il prima possibile se hai bisogno di annullare o apportare modifiche al tuo ordine. Faremo del nostro meglio per soddisfare la tua richiesta, ma tieni presente che potremmo non essere in grado di apportare modifiche una volta che l'ordine è stato spedito.",
+    "question3": "Qual è la vostra politica di restituzione?",
+    "answer3": "Offriamo una garanzia di rimborso di 30 giorni. Se non sei soddisfatto del tuo acquisto, puoi restituirlo entro 30 giorni per un rimborso completo."
+  },
+  "c-level": {
+    "title": "PER i dirigenti",
+    "subtitle": "Innovazione nell'accesso a beni reali",
+    "cards": {
+      "card_1": "Il nostro modello combina sostenibilità, trasparenza e tendenze tecnologiche, fornendoti nuove fonti di reddito e opportunità",
+      "card_2": "Posto nel consiglio: consulenza e gestione",
+      "card_3": "Quota dei profitti e quota di UNCO",
+      "card_4": "Collaborazione e consulenza: aumenta il tuo investimento",
+      "card_5": "Investi nei settori in cui sei professionista"
+    },
+    "buttons": {
+      "button_1": "acquista NFT \"UNCO888\"",
+      "button_2": "Scarica presentazione"
+    }
+  },
+  "investors": {
+    "title": "Per investitori angelici",
+    "title_1": "Per",
+    "title_2": "investitori angelici",
+    "subtitle_1": "Reddito da investimenti e sviluppo",
+    "subtitle_2": "di \"UNCO Exchange\" - la piattaforma di investimento alimentare",
+    "cards": {
+      "card_1": "Il tuo prossimo investimento in asset digitali legati all'economia reale",
+      "card_2": "Posto nel consiglio: controllo e consulenza",
+      "card_3": "Quota di UNCO con opzione di uscita aperta",
+      "card_4": "Team di professionisti e AI ERP",
+      "card_5": "Tirocinanti da tutto il mondo"
+    },
+    "buttons": {
+      "button_1": "acquista NFT \"UNCO888\"",
+      "button_2": "Scarica presentazione"
+    }
+  },
+  "feedback": {
+    "subtitle": "Feedback",
+    "button_text": "Lascia una recensione"
+  },
+  "feedbackForm": {
+    "labelName": "Il tuo nome",
+    "placeholderName": "Inserisci il tuo nome",
+    "labelPhoto": "Carica la tua foto",
+    "labelMessage": "Feedback",
+    "placeholderMessage": "Inserisci il tuo messaggio",
+    "btnText": "INVIA",
+    "agreeText": "Accetto la politica sulla privacy di questa risorsa"
+  },
+  "buyandsell": {
+    "title": "puoi comprare e vendere",
+    "disclaimer": "Man mano che \"UNCO Eco-System\" si sviluppa con nuove collaborazioni, risultati aziendali, ecc., questo potrebbe influenzare il prezzo e l'offerta di \"UNCO888\". I titolari di \"UNCO888\" sono liberi di vendere e acquistare questo NFT fino al momento in cui viene scambiato con azioni della società. Ogni NFT \"UNCO888\" può essere scambiato solo una volta. Per maggiori dettagli, leggi il contratto di opzione.",
+    "button_text": "fare un'offerta",
+    "card": {
+      "quantity": "Quantità",
+      "price": "Prezzo",
+      "button": "comprare"
+    }
+  },
+  "sellForm": {
+    "placeholderQuantity": "Enter quantity for sale ",
+    "placeholderLink": "Add your link",
+    "placeholderContactInfo": "Enter your contact information ",
+    "labelQuantity": "Quantity for sale",
+    "labelLink": "Your link to offer ",
+    "labelContactInfo": "Your contact information",
+    "agreeText": "I agree with the Privacy policy on this resource",
+    "btnText": "send"
+  },
+
+  "textRoadMap": {
+    "title": "OUR STORY",
+    "text_1": "Andrey Yusupov ha avviato la creazione e ha guidato una cooperativa di consumatori con i vicini per acquistare insieme prodotti dagli agricoltori. I ruoli sono stati distribuiti tra i membri della cooperativa: uno ritira i prodotti oggi, un altro domani.",
+    "text_2": "La nostra esperienza di successo si è rapidamente diffusa in tutta la città, e molte persone hanno chiesto aiuto per aprire le proprie cooperative. Per semplificare gli ordini, la contabilità e la gestione dei documenti, abbiamo organizzato lo sviluppo della nostra prima piattaforma IT. Cooperative di consumatori sono state lanciate nelle aziende.",
+    "text_3": "Il nostro primo ufficio è stato aperto. Le nostre soluzioni IT diventano più complesse: sono emerse soluzioni per l'automazione del cross-docking, la prima soluzione per la consegna dell'ultimo miglio, è stata lanciata una soluzione per terminali di ordine in uffici e aziende, sono stati sviluppati materiali di imballaggio e promozionali.",
+    "text_4": "Per espandersi in altre regioni e paesi, è stata creata l'organizzazione commerciale EdaEco. Inizialmente, c'era solo consegna alle aziende. Successivamente, abbiamo lanciato la consegna mirata a domicilio. Sono stati aperti i primi eco-punti: centri di ritiro ordini nei caffè.",
+    "text_5": "Andrey Yusupov ha creato cooperative unite - United Cooperatives - l'inizio della storia di UNCO. È stata lanciata la prima attività \"dal produttore al consumatore\" a Berlino https://unco.club",
+    "text_6": "Abbiamo sviluppato una nuova versione della nostra soluzione commerciale UNCO Farmer's Corner in formato \"white label\". È stata rilasciata una nuova versione della nostra soluzione IT.",
+    "text_7": "Lanciato in Germania \"white label\"",
+    "text_8": "Lanciato in Italia \"white label\", è iniziato lo sviluppo di una soluzione aziendale concettualmente nuova, ecologica e disponibile in tutto il mondo, e una soluzione IT.",
+    "text_9": "Il \"white label\" è stato lanciato in Serbia, è stata lanciata la piattaforma https://unco.market - la prima soluzione nell'ambito del concetto \"UNCO Global\"",
+    "text_10": "https://foodnft.orgSono state lanciate pagine di destinazione https://foodfutures.net https://foodfutures.club https://unco.market https://foodnft.org https://unco.bio https://unco.trade Sviluppato e proposto per la pubblicazione \"UNCO Food Futures per il commercio al dettaglio di alimenti\" e \"UNCO Food Futures per HoReCa\""
+  },
+  "contact": {
+    "title": "Non esitare a contattarci per qualsiasi domanda",
+    "subtitle": "Scrivi la tua richiesta, un modo conveniente per comunicare e ti risponderemo",
+    "placeholderName": "Inserisci il tuo nome",
+    "btnText": "Contattaci"
+  },
+  "contactForm": {
+    "placeholderName": "Inserisci il tuo nome",
+    "placeholderMessage": "Inserisci il tuo messaggio",
+    "labelName": "Il tuo nome",
+    "labelMessage": "Testo del messaggio",
+    "agreeText": "Accetto la politica sulla privacy di questa risorsa",
+    "btnText": "INVIA"
+  },
+  "services": {
+    "title": "Eco-Sistema"
+  },
+  "footer": {
+    "title": "Contattaci:",
+    "links": {
+      "link_1": "Compra/Vendi",
+      "link_2": "UFF",
+      "link_3": "Presentazione",
+      "link_4": "Notizie",
+      "link_5": "Domande e Risposte",
+      "link_6": "Tabella di Marcia",
+      "link_7": "Eco-Sistema UNCO",
+      "link_8": "Impressum",
+      "link_9": "Datenschutz",
+      "link_10": "Rückgaberecht",
+      "link_11": "AGB"
+    },
+    "text": {
+      "text_1": "Tutti i diritti riservati. Qualsiasi parte di questa presentazione è soggetta a modifiche da parte del proprietario in qualsiasi momento senza preavviso. Questa presentazione o parte di essa non costituisce una proposta commerciale né parte di un contratto. Gli elementi sono approssimativi e soggetti a negoziazione. Qualsiasi copia e utilizzo per scopi commerciali richiede il consenso scritto del titolare del copyright.",
+      "text_2": "*Tutti i numeri, designazioni, abbreviazioni e dati in queste pagine web hanno come unico scopo spiegare il modello operativo, non si basano su fatti o eventi reali e non possono essere utilizzati per altri scopi (inclusi ma non limitati a: decisioni di investimento, acquisti, istruzione, previsioni) se non per una comprensione generale del modello di business. I servizi di trading sono forniti da società terze sotto gli accordi e le licenze pertinenti dei rispettivi paesi in cui avvengono le vendite e altre transazioni. Le prestazioni passate non sono un indicatore affidabile dei risultati futuri. I tuoi rendimenti possono aumentare o diminuire a causa delle fluttuazioni valutarie. Il tuo capitale è a rischio. Consulta le informative di trading sui siti web delle rispettive piattaforme di trading."
+    }
+  },
+  "not found": {
+    "text": "Pagina non trovata",
+    "button": "Vai alla pagina principale"
+  }
+}
