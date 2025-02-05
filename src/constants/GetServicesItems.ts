@@ -2,7 +2,7 @@ export const servicesItems = [
   {
     src: '/images/Services/customers.png',
     name: 'customers',
-    link: 'https://unco.club/',
+    link: ' https://unco.club/',
     button_title: 'UFF',
     button_text: 'for retail customers',
     width: 465,
@@ -11,7 +11,7 @@ export const servicesItems = [
   {
     src: '/images/Services/food-futures.jpg',
     name: 'investors',
-    link: 'https://unco.invest',
+    link: 'https://unco.global/',
     button_title: 'UFF',
     button_text: 'for investors',
     width: 465,
@@ -30,7 +30,7 @@ export const servicesItems = [
   {
     src: '/images/Services/exchange.jpg',
     name: 'exchange',
-    link: 'www.unco.exchange',
+    link: 'https://uff.exchange/',
     button_title: 'UFF',
     button_text: 'exchange',
     width: 465,
@@ -40,9 +40,9 @@ export const servicesItems = [
   {
     src: '/images/Services/retail and e-commerce.png',
     name: 'e-commerce',
-    link: 'https://www.foodfutures.club',
+    link: 'https://foodfutures.club/',
     button_title: 'UFF',
-    button_text: 'for E-commerce',
+    button_text: 'for Retail and E-commerce',
     width: 465,
     height: 310,
   },
@@ -60,7 +60,7 @@ export const servicesItems = [
   {
     src: '/images/Services/retired.png',
     name: 'retired',
-    link: 'https://unco.retired',
+    link: 'https://edaeco.club/',
     button_title: 'UNCO',
     button_text: 'for retired',
     width: 465,
@@ -70,7 +70,7 @@ export const servicesItems = [
   {
     src: '/images/Services/farm-to-office.png',
     name: 'farmtooffice',
-    link: 'https://foodnft.org',
+    link: 'https://unco.eu/',
     button_title: 'UNCO',
     button_text: 'farm - to - office',
     width: 465,
@@ -80,7 +80,7 @@ export const servicesItems = [
   {
     src: '/images/Services/bloggers.jpg',
     name: 'bloggers',
-    link: 'https://unco.bloggers',
+    link: 'https://unco.exchange',
     button_title: 'UNCO',
     button_text: 'for bloggers',
     width: 465,
@@ -90,7 +90,7 @@ export const servicesItems = [
   {
     src: '/images/Services/communities.jpg',
     name: 'communities',
-    link: 'https://foodnft.org',
+    link: 'https://unco.market/',
     button_title: 'UNCO',
     button_text: 'for communities',
     width: 465,

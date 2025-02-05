@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <div className={styles.notfound}>
       <Image
         className={styles.notfound_image}
-        src='/images/404.png'
+        src='/images/404-logo.png'
         alt='not-found'
         width={499}
         height={333}

@@ -10,9 +10,6 @@ import SellForm from '../SellForm/SellForm';
 function BuyAndSell() {
   const t = useTranslations('buyandsell');
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 3;
-  const cardWidth = 380 + 69;
 
   const buyCards = [
     {
@@ -33,14 +30,15 @@ function BuyAndSell() {
     },
   ];
 
-  const maxIndex = buyCards.length - visibleCards;
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : prevIndex));
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+  const handleScroll = (direction: 'left' | 'right') => {
+    const slider = sliderRef.current;
+    if (slider) {
+      const scrollAmount = slider.offsetWidth / 2;
+      slider.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -62,39 +60,39 @@ function BuyAndSell() {
         </span>
       </h2>
       <p className={styles.disclaimer}>{t('disclaimer')}</p>
-      <div className={styles.cards__wrapper}>
+      <div className={styles.slider}>
         <div className={styles.cards__buttonDesktopContainer}>
           <button
             className={`${styles.cards__button} ${styles.cards__button_left}`}
-            onClick={handlePrev}
+            onClick={() => handleScroll('left')}
+            aria-label='Previous'
           ></button>
         </div>
-        <div className={styles.cards__viewport}>
-          <div
-            ref={sliderRef}
-            className={styles.cards}
-            style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
-          >
-            {buyCards.map((buyCard, index) => (
-              <BuyCard key={index} quantity={buyCard.quantity} price={buyCard.price} />
-            ))}
-          </div>
+
+        <div ref={sliderRef} className={styles.cards}>
+          {buyCards.map((buyCard, index) => (
+            <BuyCard key={index} quantity={buyCard.quantity} price={buyCard.price} />
+          ))}
         </div>
+
         <div className={styles.cards__buttonDesktopContainer}>
           <button
             className={`${styles.cards__button} ${styles.cards__button_right}`}
-            onClick={handleNext}
+            onClick={() => handleScroll('right')}
+            aria-label='Next'
           ></button>
         </div>
       </div>
       <div className={styles.cards__buttonTabletContainer}>
         <button
           className={`${styles.cards__button} ${styles.cards__button_left}`}
-          onClick={handlePrev}
+          onClick={() => handleScroll('left')}
+          aria-label='Previous'
         ></button>
         <button
           className={`${styles.cards__button} ${styles.cards__button_right}`}
-          onClick={handleNext}
+          onClick={() => handleScroll('right')}
+          aria-label='Next'
         ></button>
       </div>
 

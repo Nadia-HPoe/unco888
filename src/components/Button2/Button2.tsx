@@ -11,7 +11,7 @@ type Props = {
 
 function Button2({ text, link, className }: Props) {
   return (
-    <Link href={link} className={`${styles.button} ${className}`} target='_blank'>
+    <Link href={link} className={`${styles.button} ${className}`}>
       {text}
     </Link>
   );

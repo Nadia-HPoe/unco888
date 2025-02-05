@@ -30,7 +30,7 @@ function Banner3() {
         </div>
       </div>
       <div className={styles.button}>
-        <Button text={t('button')} link='' />
+        <Button text={t('button')} link='#buy' />
       </div>
     </div>
   );

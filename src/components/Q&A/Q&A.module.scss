@@ -1,382 +1,382 @@
 @use '../../styles/_var' as var;
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-family: var.$font-montserrat;
-    position: relative;
-    max-width: 1920px;
-    height: 1113px;
-    background: var.$bg-primary-gradient;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var.$font-montserrat;
+  position: relative;
+  max-width: 1920px;
+  height: 1113px;
+  background: var.$bg-primary-gradient;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 48px;
+    bottom: 48px;
+    left: 0;
+    width: 100%;
+    background: url('../../../public/images/Q&A/888-Q&A.png') center/cover no-repeat;
+    z-index: 0;
+  }
+
+  @media screen and (max-width: 1440px) {
+    height: auto;
+    max-width: 1440px;
+    padding: 123px 0px 162px 0px;
 
     &::after {
-        content: '';
-        position: absolute;
-        top: 48px;
-        bottom: 48px;
-        left: 0;
-        width: 100%;
-        background: url('../../../public/images/Q&A/888-Q&A.png') center/cover no-repeat;
-        z-index: 0;
+      content: '';
+      position: absolute;
+      top: 226.91px;
+      bottom: 167px;
+      background: url('../../../public/images/Q&A/888_1440.png') center/cover no-repeat;
     }
+  }
 
-    @media screen and (max-width: 1440px) {
-        height: 1285px;
-        max-width: 1440px;
-        padding: 123px 133px 162px 133px;
+  @media screen and (max-width: 800px) {
+    height: auto;
+    padding: 60px 23px 80px 23px;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: 226.91px;
-            bottom: 167px;
-            background: url('../../../public/images/Q&A/888_1440.png') center/cover no-repeat;
-        }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 132px;
+      bottom: -6px;
+      background: url('../../../public/images/Q&A/888_760.png') center/cover no-repeat;
     }
+  }
 
-    @media screen and (max-width: 767px) {
-        max-width: 760px;
-        height: auto;
-        padding: 60px 23px 80px 23px;
+  @media screen and (max-width: 510px) {
+    max-width: 100%;
+    padding: 40px 20px;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: 132px;
-            bottom: -6px;
-            background: url('../../../public/images/Q&A/888_760.png') center/cover no-repeat;
-        }
+    &::after {
+      background: none;
     }
-
-    @media screen and (max-width: 510px) {
-        max-width: 100%;
-        padding: 40px 20px;
-
-        &::after {
-            background: none;
-        }
-    }
+  }
 }
 
 .title {
-    z-index: 1;
-    text-align: center;
-    font-weight: 400;
-    font-size: 55px;
-    color: var.$gray;
-    padding-top: 59px;
+  z-index: 1;
+  text-align: center;
+  font-weight: 400;
+  font-size: 55px;
+  color: var.$gray;
+  padding-top: 59px;
 
-    @media screen and (max-width: 1440px) {
-        padding-top: 0px;
-    }
+  @media screen and (max-width: 1440px) {
+    padding-top: 0px;
+  }
 
-    @media screen and (max-width: 767px) {
-        font-size: 32px;
-    }
+  @media screen and (max-width: 767px) {
+    font-size: 32px;
+  }
 }
 
 .container {
-    z-index: 1;
-    width: 1597px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding-top: 98px;
+  z-index: 1;
+  width: 1597px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 98px;
 
-    @media screen and (max-width: 1700px) {
-        padding-top: 125px;
-        gap: 40px;
-        width: auto;
+  @media screen and (max-width: 1700px) {
+    padding-top: 125px;
+    gap: 40px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 1600px) {
+    max-width: 1250px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    gap: 60px;
+    max-width: 1174px;
+    position: relative; 
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1300px;
+      height: 600px;
+      border-radius: 50%;
+      z-index: -1;
+      background: radial-gradient(
+        circle at center,
+        rgba(124, 45, 188, 0.15) 0%,
+        rgba(124, 45, 188, 0.13) 20%,
+        rgba(124, 45, 188, 0.1) 35%,
+        rgba(124, 45, 188, 0.07) 50%,
+        rgba(124, 45, 188, 0.04) 65%,
+        rgba(124, 45, 188, 0.02) 80%,
+        rgba(124, 45, 188, 0.01) 90%,
+        rgba(124, 45, 188, 0) 100%
+      );
     }
+  }
 
-    @media screen and (max-width: 1600px) {
-        padding-top: 125px;
-        gap: 40px;
-        width: 1250px;
+  @media screen and (max-width: 800px) {
+    max-width: 714px;
+    padding-top: 67px;
+    gap: 29px;
+
+    &::after {
+      top: 70%;
+      width: 768px;
+      height: 749px;
     }
+  }
+  @media screen and (max-width: 720px) {
+    max-width: 500px;
+    padding-top: 67px;
+    gap: 29px;
+  }
 
-    @media screen and (max-width: 1440px) {
-        padding-top: 125px;
-        gap: 60px;
-        width: 1174px;
-        position: relative; // Добавили для корректного позиционирования псевдоэлемента
-    
-        &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 52%;
-            transform: translate(-50%, -50%);
-            width: 1300px;
-            height: 600px;
-            border-radius: 50%;
-            z-index: -1;
-            background: radial-gradient(
-                circle at center,
-                rgba(124, 45, 188, 0.15) 0%,
-                rgba(124, 45, 188, 0.13) 20%,
-                rgba(124, 45, 188, 0.1) 35%,
-                rgba(124, 45, 188, 0.07) 50%,
-                rgba(124, 45, 188, 0.04) 65%,
-                rgba(124, 45, 188, 0.02) 80%,
-                rgba(124, 45, 188, 0.01) 90%,
-                rgba(124, 45, 188, 0) 100%
-            );
-        }
+  @media screen and (max-width: 510px) {
+    padding-top: 25px;
+    gap: 0px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1300px;
+      height: 600px;
+      border-radius: 50%;
+      z-index: -1;
+      background: none;
     }
-
-    @media screen and (min-width: 800px) and (max-width: 1256px) {
-        width: auto;
-    }
-
-    @media screen and (max-width: 767px) {
-        max-width: 714px;
-        padding-top: 67px;
-        gap: 29px;
-
-        &::after {
-            top: 70%;
-            width: 768px;
-            height: 749px;
-        }
-    } 
-    @media screen and (max-width: 720px) {
-        max-width: 500px;
-        padding-top: 67px;
-        gap: 29px;
-    }
-
-    @media screen and (max-width: 510px) {
-        padding-top: 25px;
-        gap: 0px;
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 52%;
-            transform: translate(-50%, -50%);
-            width: 1300px;
-            height: 600px;
-            border-radius: 50%;
-            z-index: -1;
-            background: none
-        }
-    }  
+  }
 }
 
 .block {
-    display: flex;
-    gap: 32px; // может и убрать потом
-    justify-content: center;
-    align-items: center;
-    min-height: 226px; // Меняем с фиксированной высоты на минимальную
-    height: auto; // Добавляем это для возможности расширения контента
-    padding: 40px 52px;
-    background-color: rgba(20, 7, 31, 1);
-    border-top: 2px solid;
-    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #EFD48E 48.76%, rgba(255, 255, 255, 0) 100%) 1;
-    transition: all 0.3s ease;
-    will-change: box-shadow, height, border-top;
-    border-radius: 12px;
+  display: flex;
+  gap: 32px; 
+  justify-content: center;
+  align-items: center;
+  min-height: 226px;
+  height: auto; 
+  padding: 40px 52px;
+  background-color: rgba(20, 7, 31, 1);
+  border-top: 2px solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      #efd48e 48.76%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    1;
+  transition: all 0.3s ease;
+  will-change: box-shadow, height, border-top;
+  border-radius: 12px;
 
-    @media screen and (max-width: 1700px) {
-        padding:   47.5px 36px 47.5px 40px ;
-        width: 1174px;
-        gap: 16px; 
-    }
+  @media screen and (max-width: 1700px) {
+    padding: 47.5px 36px 47.5px 40px;
+    width: 1174px;
+    gap: 16px;
+  }
 
-    &.active {
-        height: auto; 
-        min-height: 256px;
-        box-shadow: 0 0 60px rgba(245, 216, 144, 0.8);
-        border-top: none;
-        background: var.$dark-blue;
-    }
+  &.active {
+    height: auto;
+    min-height: 256px;
+    box-shadow: 0 0 60px rgba(245, 216, 144, 0.8);
+    border-top: none;
+    background: var.$dark-blue;
+  }
 
-    @media screen and (min-width: 768px) and (max-width: 1256px) {
-        max-width: 767px;
-        justify-content:space-between;
-    }
+  @media screen and (min-width: 1001px) and (max-width: 1255px) {
+    max-width: 1000px;
+    justify-content: space-between;
+  }
 
-    @media screen and (max-width: 767px) {
+  @media screen and (min-width: 767px) and (max-width: 1000px) {
+    max-width: 714px;
+  }
+
+  @media screen and (max-width: 767px) {
+    
     width: 100%;
     padding: 32px 40px;
     position: relative;
     gap: 0px;
-    justify-content:space-between;
-    }
+    justify-content: space-between;
+  }
 
-    @media screen and (max-width: 720px) {
-        flex-direction: column;
-        gap: 95px;
-        }
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    gap: 95px;
+  }
 
-        @media screen and (max-width: 510px) {
-            gap: 74px;
-            max-width: 350px;
-            }
+  @media screen and (max-width: 510px) {
+    gap: 74px;
+    max-width: 350px;
+  }
 
-        @media screen and (max-width: 390px) {
-            max-width: 350px;
-            }
-
+  @media screen and (max-width: 390px) {
+    max-width: 350px;
+  }
 }
 
 .text {
-    min-height: 122px; 
-    height: auto;
+  min-height: 122px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media screen and (max-width: 1256px) {
+    gap: 29px;
     display: flex;
-    align-items: center;
-    gap: 32px;
+    flex-direction: column;
+  }
 
-    @media screen and (max-width: 1256px) {
-        gap: 29px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 767px) {
-        gap: 29px;
-        display: flex;
-        flex-direction: column;
-    }
+  @media screen and (max-width: 767px) {
+    gap: 29px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .question {
-    width: 445px;
-    color: rgba(210, 205, 216, 1);
-    font-size: 24px;
-    font-weight: 400;
-    transition: font-weight 0.3s ease;
-    overflow-wrap: break-word;
+  width: 445px;
+  color: rgba(210, 205, 216, 1);
+  font-size: 24px;
+  font-weight: 400;
+  transition: font-weight 0.3s ease;
+  overflow-wrap: break-word;
 
-    &.questionActive {
-        font-weight: 600 !important;
-    }
+  &.questionActive {
+    font-weight: 600 !important;
+  }
 
-    @media screen and (max-width: 1700px) {
-        font-size: 20px;
-    }
+  @media screen and (max-width: 1700px) {
+    font-size: 20px;
+  }
 
-    @media screen and (min-width: 768px) and (max-width: 1256px) {
-        margin-bottom: 32px;
-    }
+  @media screen and (min-width: 768px) and (max-width: 1256px) {
+    margin-bottom: 32px;
+  }
 
-    @media screen and (max-width: 767px) {
-        font-size: 22px;
-        letter-spacing: 0.2rem;
-        margin-bottom: 32px;
-    }
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+    letter-spacing: 0.2rem;
+    margin-bottom: 32px;
+  }
 
-    @media screen and (max-width: 720px) {
-        max-width: 400px;
-        font-size: 22px;
-    }
+  @media screen and (max-width: 720px) {
+    max-width: 400px;
+    font-size: 22px;
+  }
 
-    @media screen and (max-width: 510px) {
-        max-width: 270px;
-        font-size: 18px;
-        }
+  @media screen and (max-width: 510px) {
+    max-width: 270px;
+    font-size: 18px;
+  }
 }
 
 .explanation {
-    width: 900px;
-    color: var.$gray;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.6; // Добавляем для контроля высоты строк
-    transition: all 0.3s ease;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
+  width: 900px;
+  color: var.$gray;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6; 
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 
-    @media screen and (min-width: 1920px) {
-        -webkit-line-clamp: 3;
-    }
+  @media screen and (min-width: 1920px) {
+    -webkit-line-clamp: 3;
+  }
 
-    @media screen and (max-width: 1700px) {
-        -webkit-line-clamp: 4;
-        font-size: 20px;
-        width: 555px;
-        line-height: 1.5; 
-    }
+  @media screen and (max-width: 1700px) {
+    -webkit-line-clamp: 4;
+    font-size: 20px;
+    width: 555px;
+    line-height: 1.5;
+  }
 
-    @media screen and (min-width: 767px) and (max-width: 1440) {
-        -webkit-line-clamp: 4;
-        font-size: 20px;
-        width: 532px;
-        line-height: 1.5; 
-    }
+  @media screen and (min-width: 767px) and (max-width: 1440) {
+    -webkit-line-clamp: 4;
+    font-size: 20px;
+    width: 532px;
+    line-height: 1.5;
+  }
 
-    @media screen and (max-width: 761px) {
-        -webkit-line-clamp: 3;
-        font-size: 18px;
-        width: 520px;
-    }
+  @media screen and (max-width: 761px) {
+    -webkit-line-clamp: 3;
+    font-size: 18px;
+    width: 520px;
+  }
 
-    @media screen and (max-width: 720px) {
-        -webkit-line-clamp: 4;
-        max-width: 400px;
-        font-size: 16px;
-    }
+  @media screen and (max-width: 720px) {
+    -webkit-line-clamp: 4;
+    max-width: 400px;
+    font-size: 16px;
+  }
 
-    @media screen and (max-width: 510px) {
-        -webkit-line-clamp: 5;
-        max-width: 270px;
-        }
+  @media screen and (max-width: 510px) {
+    -webkit-line-clamp: 5;
+    max-width: 270px;
+  }
 
-    &.explanationActive {
-        font-weight: 400;
-        display: block;
-        -webkit-line-clamp: unset;
-        line-clamp: unset;
-        height: auto;
-        overflow: visible;
-    }
+  &.explanationActive {
+    font-weight: 400;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    height: auto;
+    overflow: visible;
+  }
 }
 
 .button {
-    width: 82px;
-    height: 82px;
-    background-color: transparent;
-    border: 0;
-    background: url('../../../public/images/Q&A/Property 1=Component 3.png') center/cover no-repeat;;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    will-change: transform;
-    transform-style: preserve-3d;
-    perspective: 1000px;
+  width: 82px;
+  height: 82px;
+  background-color: transparent;
+  border: 0;
+  background: url('../../../public/images/Q&A/Property 1=Component 3.png') center/cover no-repeat;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 
-    @media screen and (max-width: 720px) {
-        align-self: self-start;
-        width: 68px;
-        height: 68px;
-        background: url('../../../public/images/Q&A/Property 1=Component 3.png') center/cover no-repeat;
-    }
+  @media screen and (max-width: 720px) {
+    align-self: self-start;
+    width: 68px;
+    height: 68px;
+    background: url('../../../public/images/Q&A/Property 1=Component 3.png') center/cover no-repeat;
+  }
 
-    &.rotated {
-        transform: rotateX(180deg);
-    }
+  &.rotated {
+    transform: rotateX(180deg);
+  }
 }
 
 .textsmini {
-    display: flex;   
-    gap: 32px; 
+  display: flex;
+  gap: 32px;
 
-    @media screen and (max-width: 1700px) {
-        gap: 0px; 
-    }
+  @media screen and (max-width: 1700px) {
+    gap: 0px;
+  }
 
-    @media screen and (max-width: 1255px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 1255px) {
+    flex-direction: column;
+  }
 
-    @media screen and (max-width: 510px) {
-        max-width: 320px;
-        }
+  @media screen and (max-width: 510px) {
+    max-width: 320px;
+  }
 }

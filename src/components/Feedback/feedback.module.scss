@@ -100,9 +100,9 @@
 }
 
 .review {
-    width: 376px;
-    height: 68px;
+    padding: 21px 40px;
     margin: 0 auto;
+    min-width: 376px;
 }
 
 
@@ -181,7 +181,6 @@
         }
     }
     .button {
-        width: 100%;
-        height: 54px;
+        min-width: 100%;
     }
 }

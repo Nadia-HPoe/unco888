@@ -13,8 +13,8 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-right: 25px;
   }
+
   .dropdown {
     padding-right: 17px;
     position: relative;
@@ -86,22 +86,24 @@
   }
 
   .news_button {
-    padding: clamp(0.313rem, 1.473vw - 0.388rem, 0.938rem);
+    padding: 0;
     & > a {
-      width: clamp(7.188rem, 20.177vw - 2.409rem, 15.75rem);
-      height: clamp(2.5rem, 2.062vw + 1.519rem, 3.375rem);
-      font-size: clamp(0.75rem, 1.915vw - 0.161rem, 1.563rem);
+      padding: 0;
+      width: 130px;
+      height: 47px;
+      font-size: 12px;
     }
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .logo {
     width: 68px;
     height: 63px;
   }
   .header {
-    padding: 4px 64px;
+    padding: 19px 64px;
+    height: 70px;
     .container {
       .lang__button {
         width: 28px;

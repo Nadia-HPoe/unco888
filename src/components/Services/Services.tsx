@@ -17,7 +17,7 @@ function Services() {
           <li key={name} className={styles.item}>
             <Image className={styles.image} src={src} alt={name} width={width} height={height} />
             <div className={styles.button}>
-              <Link className={styles.link} href={link}>
+              <Link className={styles.link} href={link} target='blank'>
                 <span>{button_title} </span> {button_text}
               </Link>
             </div>

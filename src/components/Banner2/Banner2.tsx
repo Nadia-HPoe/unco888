@@ -41,7 +41,7 @@ function Banner2() {
         </div>
       </div>
       <div className={styles.button}>
-        <Button text={t('button_text')} link='' />
+        <Button text={t('button_text')} link='#buy' />
       </div>
     </div>
   );

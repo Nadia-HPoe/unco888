@@ -4,9 +4,19 @@ import Link from 'next/link';
 import { cn } from '@/functions/cn';
 import { GetSocialData } from '@/constants/GetSocialsData';
 import styles from './footer.module.scss';
-import LinkFooter from './LinkFooter';
 
-function Footer() {
+export type ArrProps = {
+  href: string;
+  text: string;
+};
+
+type Props = {
+  data: {
+    links: ArrProps[];
+  };
+};
+
+function Footer({ data }: Props) {
   const t = useTranslations('footer');
   const socials = GetSocialData();
 
@@ -56,80 +66,40 @@ function Footer() {
                 target='_blank'
                 className={styles.address}
               >
-                UNCO Club GmbH, Schönenberger Straße 49, 53783 Eitorf, Germany
+                UNCO Club
               </Link>
             </div>
 
             <nav className={styles.links}>
-              <ul className={styles.nav}>
-                <div className={styles.col}>
-                  <li>
-                    <Link href='' className={styles.link}>
-                      {t('links.link_1')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='' className={styles.link}>
-                      {t('links.link_2')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='' className={styles.link}>
-                      {t('links.link_3')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='#news' className={styles.link}>
-                      {t('links.link_4')}
-                    </Link>
-                  </li>
-                </div>
-                <div className={styles.col}>
-                  <li>
-                    <Link href='#faq' className={styles.link}>
-                      {t('links.link_5')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='#roadmap' className={styles.link}>
-                      {t('links.link_6')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='' className={styles.link}>
-                      {t('links.link_7')}
-                    </Link>
-                  </li>
-                </div>
-                <div className={styles.col}>
-                  <li>
-                    <Link
-                      href='https://www.unco.club/include/impressum.php'
-                      className={styles.link}
-                    >
-                      {t('links.link_8')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href='https://www.unco.club/include/licenses_detail.php'
-                      className={styles.link}
-                    >
-                      {t('links.link_9')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='https://www.unco.club/company/rckgaberecht' className={styles.link}>
-                      {t('links.link_10')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='https://www.unco.club/include/abg.php' className={styles.link}>
-                      {t('links.link_11')}
-                    </Link>
-                  </li>
-                </div>
-              </ul>
+              <div className={styles.nav}>
+                <ul className={styles.col}>
+                  {data.links.slice(0, 4).map(({ text, href }) => (
+                    <li key={text}>
+                      <Link className={styles.link} href={href}>
+                        {text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <ul className={styles.col}>
+                  {data.links.slice(4, 7).map(({ text, href }) => (
+                    <li key={text}>
+                      <Link className={styles.link} href={href}>
+                        {text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <ul className={styles.col}>
+                  {data.links.slice(7, 11).map(({ text, href }) => (
+                    <li key={text}>
+                      <Link className={styles.link} href={href}>
+                        {text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </nav>
           </div>
         </div>
@@ -144,9 +114,16 @@ function Footer() {
           />
         ))}
       </div>
-      <LinkFooter />
+      <div className={styles.nav_mobile}>
+        {data.links.map((item, n) => (
+          <li key={n}>
+            <Link className={styles.link} href={item.href}>
+              {item.text}
+            </Link>
+          </li>
+        ))}
+      </div>
       <hr className={styles.line}></hr>
-
       <p className={styles.text}>{t('text.text_1')}</p>
       <p className={styles.text}>{t('text.text_2')}</p>
     </footer>

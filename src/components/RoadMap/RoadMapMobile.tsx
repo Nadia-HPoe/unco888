@@ -3,10 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./roadMap.module.scss";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { RoadMapItem, RoadMapKeys } from "@/constants/RoadMapData";
 
-const RoadMapMobile = ({ item, imageSize }: { item: RoadMapItem; imageSize: RoadMapKeys }) => {
+const RoadMapMobile = ({
+  item,
+  imageSize,
+  getSearchLinks,
+}: {
+  item: RoadMapItem;
+  imageSize: RoadMapKeys;
+  getSearchLinks: (text: string) => JSX.Element;
+}) => {
   const t = useTranslations('textRoadMap');
   const [selectedAccordion, setSelectedAccordion] = useState<number | null>(null);
 
@@ -55,7 +63,7 @@ const RoadMapMobile = ({ item, imageSize }: { item: RoadMapItem; imageSize: Road
               height={40}
             />
           </Link>
-          <div className={styles.text}>{t(item.text)}</div>
+          <div className={styles.text}>{getSearchLinks(t(item.text))}</div>
           <div className={`${styles.flare} ${styles.flare_table}`}></div>
         </div>
       )}

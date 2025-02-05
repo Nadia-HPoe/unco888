@@ -88,24 +88,27 @@
   }
 }
 
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
 .cards {
   display: flex;
   gap: 69px;
-  max-width: 1727px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
 
-  &__viewport {
-    overflow: hidden;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    overflow: hidden;
-    justify-content: center;
-  }
+
   &__button {
     display: flex;
     justify-content: center;
@@ -176,7 +179,6 @@
 
   .cards {
     gap: 48px;
-    max-width: 1266px;
   }
 }
 
@@ -211,7 +213,6 @@
 
   .cards {
     gap: 28px;
-    max-width: 720px;
 
     &__buttonDesktopContainer {
       display: none;
@@ -256,7 +257,6 @@
 
   .cards {
     gap: 10px;
-    max-width: 350px;
 
     &__buttonTabletContainer {
       display: none;

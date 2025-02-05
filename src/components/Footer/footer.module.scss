@@ -49,23 +49,18 @@
 .socials__icon_1 {
   background-image: url(/images/Footer/facebook.svg);
 }
-
 .socials__icon_2 {
   background-image: url(/images/Footer/instagram.svg);
 }
-
 .socials__icon_3 {
   background-image: url(/images/Footer/telegram.svg);
 }
-
 .socials__icon_4 {
   background-image: url(/images/Footer/linkedin.svg);
 }
-
 .socials__icon_5 {
   background-image: url(/images/Footer/twitter.svg);
 }
-
 .socials__icon_6 {
   background-image: url(/images/Footer/youtube.svg);
   width: 50px;
@@ -84,53 +79,35 @@
   max-width: 362px;
 }
 
-.phone {
-  color: var.$gray;
-  font-family: var.$font-michroma;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
-  display: flex;
-  gap: 18px;
-  text-decoration: none;
-  &::before {
-    content: url('/images/Footer/phone.svg');
-    width: 32px;
-    height: 32px;
-  }
-}
-
-.email {
-  color: var.$gray;
-  font-family: var.$font-michroma;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
-  display: flex;
-  gap: 18px;
-  text-decoration: none;
-  &::before {
-    content: url('/images/Footer/email.svg');
-    width: 32px;
-    height: 32px;
-  }
-}
-
+.phone,
+.email,
 .address {
   color: var.$gray;
-  font-family: var.$font-montserrat;
-  font-size: 16px;
+  font-family: var.$font-michroma;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 32px;
   display: flex;
   gap: 18px;
-  max-width: 300px;
   text-decoration: none;
-  &::before {
-    content: url('/images/Footer/address.svg');
-    width: 32px;
-    height: 32px;
-  }
+}
+
+.phone::before {
+  content: url('/images/Footer/phone.svg');
+  width: 32px;
+  height: 32px;
+}
+
+.email::before {
+  content: url('/images/Footer/email.svg');
+  width: 32px;
+  height: 32px;
+}
+
+.address::before {
+  content: url('/images/Footer/address.svg');
+  width: 32px;
+  height: 32px;
 }
 
 .nav {
@@ -166,6 +143,7 @@
     rgba(247, 240, 240, 0)
   );
 }
+
 .text {
   padding-top: 34px;
   color: var.$gray;
@@ -174,9 +152,11 @@
   font-weight: 400;
   line-height: 140%;
 }
+
 .logo {
   display: none;
 }
+
 .socials__wrapper_mobile {
   display: none;
 }
@@ -274,11 +254,6 @@
     padding: 48px 0 30px;
   }
 
-  .address {
-    font-size: 20px;
-    line-height: 32px;
-    max-width: 100%;
-  }
   .nav {
     display: none;
   }
@@ -333,13 +308,6 @@
   .contacts {
     gap: 28px;
     padding-right: 0;
-  }
-
-  .address {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    width: 80%;
   }
 
   .socials__link {

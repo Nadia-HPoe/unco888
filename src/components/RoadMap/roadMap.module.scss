@@ -74,6 +74,31 @@
     line-height: 33.6px;
 }
 
+
+
+
+.container_for_links{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2%;
+}
+
+.snow_for_links {
+    color: $gray;
+    padding-top: 1%;
+}
+
+
+.linksUnco {
+    text-decoration: none;
+    color: rgb(167, 221, 224);
+}
+
+.linksUnco:hover {
+    text-decoration: underline rgb(167, 221, 224);
+}
+
+
 .circle_of_year {
     max-width: 18px;
 }
@@ -168,6 +193,8 @@
     flex-direction: row-reverse;
 }
 
+
+
 @media (max-width: 1440px) {
     .container_main {
         padding: 122px 5%;
@@ -238,9 +265,6 @@
         padding: 40px 20px;
     }
 
-    .content {
-    }
-
     .title {
         font-size: 26px;
         font-weight: 400;
@@ -287,3 +311,4 @@
         width: 13vw;
     }
 }
+

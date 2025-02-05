@@ -6,7 +6,7 @@
       "link_3": "Stellplatz-Deck",
       "link_4": "Nachrichten",
       "link_5": "F&A",
-      "link_6": "Straßenkarte",
+      "link_6": "Unsere Geschichte",
       "link_7": "UNCO-Ökosystem"
     },
     "button": "UNSERE NEUIGKEITEN"
@@ -127,9 +127,11 @@
   },
   "sellForm": {
     "placeholderQuantity": "Enter quantity for sale ",
+    "placeholderPrice": "Enter price for sale ",
     "placeholderLink": "Add your link",
     "placeholderContactInfo": "Enter your contact information ",
     "labelQuantity": "Quantity for sale",
+    "labelPrice": "Price for sale",
     "labelLink": "Your link to offer ",
     "labelContactInfo": "Your contact information",
     "agreeText": "I agree with the Privacy policy on this resource",
@@ -138,29 +140,27 @@
 
   "textRoadMap": {
     "title": "OUR STORY",
-    "text_1": "Andrey Yusupov initiierte und leitete eine Konsumgenossenschaft mit Nachbarn, um gemeinsam Produkte von Bauern zu kaufen. Die Rollen wurden unter den Mitgliedern der Genossenschaft verteilt: Einer holt heute die Lebensmittel, ein anderer morgen",
-    "text_2": "Unsere erfolgreichen Erfahrungen verbreiteten sich schnell in der ganzen Stadt, und viele Menschen baten um Hilfe bei der Eröffnung ihrer eigenen Genossenschaften. Um das Bestellwesen, die Buchhaltung und die Dokumentenverwaltung zu vereinfachen, haben wir die Entwicklung unserer ersten IT-Plattform organisiert. Verbrauchergenossenschaften wurden in Unternehmen gegründet.",
-    "text_3": "Unser erstes Büro wurde eröffnet. Unsere IT-Lösungen werden immer komplexer: Lösungen für die Automatisierung von Cross-Docking, First- und Last-Mile-Delivery-Lösungen sind entstanden, eine Lösung für Bestellterminals in Büros und Unternehmen wurde eingeführt, Verpackungs- und Werbematerialien wurden entwickelt.",
-    "text_4": "Um das Angebot auf andere Regionen und Länder auszuweiten, wurde die kommerzielle Organisation EdaEco gegründet. Anfänglich wurden nur Unternehmen beliefert. Dann begannen wir mit der gezielten Lieferung nach Hause. Die ersten Ökopunkte wurden eröffnet - Zentren für die Ausgabe von Bestellungen in Cafés.",
-    "text_5": "Andrey Yusupov gründete vereinigte Genossenschaften - United Cooperatives - der Beginn der Geschichte von UNCO. Der erste Farm-to-Table-Betrieb in Berlin wurde gegründet https://unco.club",
-    "text_6": "Wir haben eine neue Version unserer UNCO Farmer's Corner Geschäftslösung im \"White Label\"-Format entwickelt. Eine neue Version unserer IT-Lösung ist freigegeben worden.",
-    "text_7": "Markteinführung in Deutschland \"white label\"",
-    "text_8": "Das in Italien eingeführte „White Label“, die Entwicklung einer konzeptionell neuen, umweltfreundlichen und weltweit verfügbaren Geschäfts- und IT-Lösung, hat begonnen.",
-    "text_9": "Das \"white label\" wurde in Serbien eingeführt, die Plattform https://unco.market - die erste Lösung im Rahmen des \"UNCO Global\"-Konzepts - wurde gestartet.",
-    "text_10": "https://foodnft.orgLanding Seiten wurden gestartet https://foodfutures.net https://foodfutures.club https://unco.market https://foodnft.org https://unco.bio https://unco.trade Entwickelt und zur Veröffentlichung vorgeschlagen \"UNCO Food Futures for Food Retail\" und \"UNCO Food Futures for HoReCa\""
+    "text_1": "Our successful experience quickly spread throughout the city, and many people asked for help in starting their own cooperatives. To simplify ordering, accounting, and document management, we organized the development of our first IT platform. Such cooperatives began to organize themselves in offices and factories where neighbors worked.",
+    "text_2": "The first office of our cooperative was opened. We are starting to actively invest in the development of IT: solutions for automating cross-docking, first- and last-mile delivery solutions appear, we've developed ordering terminals for offices and factories.",
+    "text_3": "In order to expand to other regions and countries, the commercial organization 'EdaEco.club'  was created. Branding, packaging, and many other marketing solutions have been developed, tested, and launched. We started home delivery. The first Eco-Points were opened - solutions for pickup orders in cafes.",
+    "text_4": "Andrey Yusupov created 'United Cooperatives' - the beginning of the UNCO story. Our first farm-to-table business in Germany was launched in Berlin: https://unco.club",
+    "text_5": "We have launched our new business solution: 'UNCO Farmer's Corner'. A new version of our IT solution was released.",
+    "text_6": "Our first 'white label' launched in Germany.",
+    "text_7": "Launched in Italy 'white label', the development of a conceptually new eco-friendly and worldwide available business solution and IT solution has begun.",
+    "text_8": "We launched the 'white label' in Serbia. The platform https://unco.market - the first solution within the concept 'UNCO Global' goes online.",
+    "text_9": "First paying customer in the \"UNCO Food Futures for Food Retail\" product. The launch of the Freemium \"UNCO eco-system\" has begun:  https://foodfutures.net  https://foodfutures.club  https://unco.market  https://foodnft.org  https://unco.bio  https://unco.trade"
   },
 
   "contact": {
     "title": "Bitte zögern Sie nicht, uns bei Fragen zu kontaktieren",
     "subtitle": "Schreiben Sie Ihre Anfrage, eine bequeme Art der Kommunikation und wir werden Ihnen antworten",
-    "placeholderName": "Geben Sie Ihren Namen ein",
+    "placeholderEmail": "E-Mail eingeben",
     "btnText": "Kontakt"
   },
 
   "contactForm": {
-    "placeholderName": "Geben Sie Ihren Namen ein",
     "placeholderMessage": "Ihre Nachricht eingeben",
-    "labelName": "Ihr Name",
+    "labelName": "Ihre E-Mail",
     "labelMessage": "Text der Nachricht",
     "agreeText": "Ich bin mit den Datenschutzbestimmungen für diese Ressource einverstanden",
     "btnText": "SENDEN"
@@ -178,7 +178,7 @@
       "link_3": "Stellplatz-Deck",
       "link_4": "Nachrichten",
       "link_5": "FRAGEN UND ANTWORTEN",
-      "link_6": "Straßenkarte",
+      "link_6": "Unsere Geschichte",
       "link_7": "UNCO-Ökosystem",
       "link_8": "Impressum",
       "link_9": "Datenschutz",
