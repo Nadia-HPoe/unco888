@@ -5,6 +5,7 @@ import styles from './sellForm.module.scss';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Button3 from '@/components/Button3/Button3';
+import { sendSellOffer } from '@/app/[locale]/actions';
 
 type SellFormProps = {
   onClose: () => void;
@@ -23,6 +24,7 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
     link: false,
     contact: false,
   });
+  const [isPending, setIsPending] = useState<boolean>(false);
 
   const handleCloseClick = () => {
     setQuantity('');
@@ -38,9 +40,40 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
     onClose();
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    handleCloseClick();
+
+    const form = {
+      quantity,
+      price,
+      link,
+      contact,
+    };
+    const visible = false;
+    console.log(form);
+    if (form) {
+      setIsPending(true);
+      try {
+        const res = await sendSellOffer(quantity, price, link, contact, visible);
+        if (res.status === 200) {
+          setQuantity('');
+          setPrice('');
+          setLink('');
+          setContact('');
+          setTouchedFields({
+            quantity: false,
+            price: false,
+            link: false,
+            contact: false,
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsPending(false);
+        handleCloseClick();
+      }
+    }
   };
 
   const handleNumberChange = (
@@ -51,9 +84,9 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
     const value = e.target.value;
     if (value === '' || /^-?\d*\.?\d*$/.test(value)) {
       setter(value);
-      setTouchedFields(prev => ({
+      setTouchedFields((prev) => ({
         ...prev,
-        [fieldName]: true
+        [fieldName]: true,
       }));
     }
   };
@@ -79,7 +112,7 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
     isAgreed;
 
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={handleSubmit}>
       <button className={styles.close} onClick={handleCloseClick} />
       <div className={styles.container__wrapper}>
         <p className={styles.container__label}>{t('labelQuantity')}</p>
@@ -116,14 +149,14 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
       <div className={styles.container__wrapper}>
         <p className={styles.container__label}>
           {t('labelLink')}
-          <Link href={'https://opensea.io/'} className={styles.link} target="_blank">
+          <Link href={'https://opensea.io/'} className={styles.link} target='_blank'>
             {' '}
             opensea.io
           </Link>
         </p>
         <input
           placeholder={t('placeholderLink')}
-          type="url"
+          type='url'
           id='link'
           value={link}
           onChange={(e) => setLink(e.target.value)}
@@ -164,8 +197,7 @@ const SellForm: React.FC<SellFormProps> = ({ onClose }) => {
           <Button3
             className={`${styles.button} ${styles.submit}`}
             type='submit'
-            onClick={handleSubmit}
-            disabled={!isFormValid}
+            disabled={!isFormValid || isPending}
             text={t('btnText')}
           />
         </div>

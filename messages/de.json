@@ -56,7 +56,6 @@
     "text4": " Ist eine Lösung für Einsparungen im Lebensmitteleinzelhandel",
     "button": "UNCO888 kaufen"
   },
-
   "faq": {
     "title": "F&A",
     "question1": "Wie ist Ihr Rückgaberecht?",
@@ -66,7 +65,6 @@
     "question3": "Wie ist Ihr Rückgaberecht?",
     "answer3": "Wir bieten eine 30-tägige Geld-zurück-Garantie. Wenn Sie mit Ihrem Kauf nicht zufrieden sind, können Sie ihn innerhalb von 30 Tagen gegen eine volle Rückerstattung zurückgeben."
   },
-
   "c-level": {
     "title": "FÜR C-Ebene",
     "subtitle": "Innovation beim Zugang zu Sachwerten",
@@ -104,7 +102,6 @@
     "subtitle": "Rückmeldung",
     "button_text": "Eine Bewertung hinterlassen"
   },
-
   "feedbackForm": {
     "labelName": "Ihr Name",
     "placeholderName": "Geben Sie Ihren Namen ein",
@@ -114,7 +111,6 @@
     "btnText": "SENDEN",
     "agreeText": "Ich bin mit den Datenschutzbestimmungen für diese Ressource einverstanden"
   },
-
   "buyandsell": {
     "title": "Sie können kaufen und verkaufen",
     "disclaimer": "Die Entwicklung von \"UNCO Eco-System\" mit neuen Kooperationen, Geschäftsergebnissen usw. kann den Preis und das Angebot von \"UNCO888\" beeinflussen. Den Inhabern von \"UNCO888\" steht es frei, diesen NFT bis zu dem Zeitpunkt, an dem er in Aktien des Unternehmens umgetauscht wird, zu verkaufen und zu kaufen. Der Umtausch jedes NFT \"UNCO888\" kann nur einmal erfolgen. Weitere Einzelheiten finden Sie in der Optionsvereinbarung.",
@@ -137,27 +133,25 @@
     "agreeText": "I agree with the Privacy policy on this resource",
     "btnText": "send"
   },
-
   "textRoadMap": {
     "title": "OUR STORY",
-    "text_1": "Our successful experience quickly spread throughout the city, and many people asked for help in starting their own cooperatives. To simplify ordering, accounting, and document management, we organized the development of our first IT platform. Such cooperatives began to organize themselves in offices and factories where neighbors worked.",
-    "text_2": "The first office of our cooperative was opened. We are starting to actively invest in the development of IT: solutions for automating cross-docking, first- and last-mile delivery solutions appear, we've developed ordering terminals for offices and factories.",
-    "text_3": "In order to expand to other regions and countries, the commercial organization 'EdaEco.club'  was created. Branding, packaging, and many other marketing solutions have been developed, tested, and launched. We started home delivery. The first Eco-Points were opened - solutions for pickup orders in cafes.",
-    "text_4": "Andrey Yusupov created 'United Cooperatives' - the beginning of the UNCO story. Our first farm-to-table business in Germany was launched in Berlin: https://unco.club",
-    "text_5": "We have launched our new business solution: 'UNCO Farmer's Corner'. A new version of our IT solution was released.",
-    "text_6": "Our first 'white label' launched in Germany.",
-    "text_7": "Launched in Italy 'white label', the development of a conceptually new eco-friendly and worldwide available business solution and IT solution has begun.",
-    "text_8": "We launched the 'white label' in Serbia. The platform https://unco.market - the first solution within the concept 'UNCO Global' goes online.",
-    "text_9": "First paying customer in the \"UNCO Food Futures for Food Retail\" product. The launch of the Freemium \"UNCO eco-system\" has begun:  https://foodfutures.net  https://foodfutures.club  https://unco.market  https://foodnft.org  https://unco.bio  https://unco.trade"
+    "text_1": "Andrey Yusupov initiated the creation and headed a consumer cooperative with neighbors to jointly purchase products from farmers. The roles were distributed among the members of the cooperative: One takes the groceries today, another tomorrow",
+    "text_2": "Our successful experience quickly spread throughout the city, and many people asked for help in starting their own cooperatives. To simplify ordering, accounting, and document management, we organized the development of our first IT platform. Such cooperatives began to organize themselves in offices and factories where neighbors worked.",
+    "text_3": "The first office of our cooperative was opened. We are starting to actively invest in the development of IT: solutions for automating cross-docking, first- and last-mile delivery solutions appear, we've developed ordering terminals for offices and factories.",
+    "text_4": "In order to expand to other regions and countries, the commercial organization 'EdaEco.club'  was created. Branding, packaging, and many other marketing solutions have been developed, tested, and launched. We started home delivery. The first Eco-Points were opened - solutions for pickup orders in cafes.",
+    "text_5": "Andrey Yusupov created 'United Cooperatives' - the beginning of the UNCO story. Our first farm-to-table business in Germany was launched in Berlin: https://unco.club",
+    "text_6": "We have launched our new business solution: 'UNCO Farmer's Corner'. A new version of our IT solution was released.",
+    "text_7": "Our first 'white label' launched in Germany.",
+    "text_8": "Launched in Italy 'white label', the development of a conceptually new eco-friendly and worldwide available business solution and IT solution has begun.",
+    "text_9": "We launched the 'white label' in Serbia. The platform https://unco.market - the first solution within the concept 'UNCO Global' goes online.",
+    "text_10": "First paying customer in the \"UNCO Food Futures for Food Retail\" product. The launch of the Freemium \"UNCO eco-system\" has begun:  https://foodfutures.net  https://foodfutures.club  https://unco.market  https://foodnft.org  https://unco.bio  https://unco.trade"
   },
-
   "contact": {
     "title": "Bitte zögern Sie nicht, uns bei Fragen zu kontaktieren",
     "subtitle": "Schreiben Sie Ihre Anfrage, eine bequeme Art der Kommunikation und wir werden Ihnen antworten",
     "placeholderEmail": "E-Mail eingeben",
     "btnText": "Kontakt"
   },
-
   "contactForm": {
     "placeholderMessage": "Ihre Nachricht eingeben",
     "labelName": "Ihre E-Mail",
@@ -165,11 +159,9 @@
     "agreeText": "Ich bin mit den Datenschutzbestimmungen für diese Ressource einverstanden",
     "btnText": "SENDEN"
   },
-
   "services": {
     "title": "Öko - System"
   },
-
   "footer": {
     "title": "Kontaktieren Sie uns:",
     "links": {
@@ -190,7 +182,6 @@
       "text_2": "*Alle Zahlen, Bezeichnungen, Abkürzungen und Daten auf diesen Webseiten dienen ausschließlich der Erläuterung des Geschäftsmodells, basieren nicht auf tatsächlichen Fakten und Ereignissen und dürfen nicht für andere Zwecke verwendet werden (einschließlich, aber nicht beschränkt auf: Investitionsentscheidungen, Käufe, Bildung, Vorhersagen) als für das allgemeine Verständnis des Geschäftsmodells. Die Handelsdienstleistungen werden von Drittunternehmen im Rahmen der einschlägigen Vereinbarungen und Lizenzen der jeweiligen Länder, in denen die Verkäufe und sonstigen Transaktionen stattfinden, erbracht. Die Performance in der Vergangenheit ist kein zuverlässiger Indikator für zukünftige Ergebnisse. Ihre Rendite kann aufgrund von Währungsschwankungen steigen oder sinken. Ihr Kapital ist einem Risiko ausgesetzt. Lesen Sie die Trading Disclosures auf den Websites der jeweiligen Handelsplattformen."
     }
   },
-
   "not found": {
     "text": "Seite nicht gefunden",
     "button": "Zur Hauptseite gehen"

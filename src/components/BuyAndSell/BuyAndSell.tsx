@@ -1,34 +1,32 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './buyAndSell.module.scss';
 import BuyCard from './BuyCard/BuyCard';
 import ModalComponent from '../ModalСomponent/ModalСomponent';
 import SellForm from '../SellForm/SellForm';
+import { SellOffersRecords, transformSellOffers } from '@/functions/transformSellOffers';
+import { loadSellOffers } from '@/app/[locale]/actions';
 
 function BuyAndSell() {
   const t = useTranslations('buyandsell');
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [sellOffers, setSellOffers] = useState<SellOffersRecords[]>([]);
 
-  const buyCards = [
-    {
-      quantity: '1',
-      price: '5 000',
-    },
-    {
-      quantity: '5',
-      price: '25 000',
-    },
-    {
-      quantity: '10',
-      price: '50 000',
-    },
-    {
-      quantity: '15',
-      price: '100 000',
-    },
-  ];
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await loadSellOffers();
+        if (res && res.status === 200 && res.data) {
+          setSellOffers(transformSellOffers(res.data));
+        }
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   const handleScroll = (direction: 'left' | 'right') => {
     const slider = sliderRef.current;
@@ -70,8 +68,13 @@ function BuyAndSell() {
         </div>
 
         <div ref={sliderRef} className={styles.cards}>
-          {buyCards.map((buyCard, index) => (
-            <BuyCard key={index} quantity={buyCard.quantity} price={buyCard.price} />
+          {sellOffers.map((buyCard, index) => (
+            <BuyCard
+              key={index}
+              quantity={buyCard.quantity}
+              price={buyCard.price}
+              link={buyCard.link}
+            />
           ))}
         </div>
 

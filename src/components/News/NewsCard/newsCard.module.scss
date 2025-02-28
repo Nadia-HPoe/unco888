@@ -1,0 +1,184 @@
+@use '../../../styles/_var' as var;
+
+.card {
+  flex: 0 0 auto;
+  width: 520px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 13px 13px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-family: var.$font-montserrat;
+  cursor: pointer;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  &__badge {
+    padding: 4px 11px;
+    color: var.$gray;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 140%;
+    border-radius: 5px;
+    &:first-child {
+      background: var.$dark-purple;
+    }
+    &:nth-child(2) {
+      background: var.$violet;
+    }
+    &:last-child {
+      color: var.$dark-blue;
+      background: var.$gray;
+    }
+  }
+  &__image {
+    border-radius: 12px;
+    height: 209px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__text {
+    color: var.$dark-blue;
+    font-size: clamp(1rem, 0.417vw + 0.625rem, 1.125rem);
+    font-weight: 400;
+    line-height: 140%;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__caption {
+    color: var.$dark-purple;
+    font-size: clamp(1.25rem, 0.833vw + 0.5rem, 1.5rem);
+    font-weight: 600;
+    line-height: 140%;
+  }
+  &__bottom {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__link {
+    color: var.$purple;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+    transition: all 0.4s ease;
+    &:hover,
+    &:active {
+      color: var.$violet;
+      text-decoration: underline;
+    }
+  }
+}
+
+.socials__wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.socials__link {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.socials__icon_tiktok {
+  background-image: url(/images/News/tiktok.svg);
+  width: 25px;
+  height: 25px;
+}
+
+.socials__icon_discord {
+  background-image: url(/images/News/discord.svg);
+  width: 25px;
+  height: 25px;
+}
+
+.socials__icon_facebook {
+  background-image: url(/images/News/facebook.svg);
+}
+
+.socials__icon_instagram {
+  background-image: url(/images/News/instagram.svg);
+}
+
+.socials__icon_telegram {
+  background-image: url(/images/News/telegram.svg);
+}
+
+.socials__icon_linkedin {
+  background-image: url(/images/News/linkedin.svg);
+}
+
+.socials__icon_twitter {
+  background-image: url(/images/News/twitter.svg);
+}
+
+.socials__icon_youtube {
+  background-image: url(/images/News/youtube.svg);
+}
+
+@media (max-width: 1440px) {
+  .card {
+    width: 412px;
+    padding: 50px 10px 17px;
+    &__badges {
+      gap: 6px;
+    }
+    &__badge {
+      font-size: 9px;
+    }
+    &__caption {
+      font-size: clamp(1rem, 0.588vw + 0.721rem, 1.25rem);
+    }
+    &__text {
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    justify-content: end;
+    width: 254px;
+    gap: 14px;
+    padding: 18px 20px 21px;
+    &__caption {
+      font-size: 16px;
+    }
+    &__image {
+      height: 207px;
+    }
+    &__text {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    &__bottom {
+      align-items: center;
+      gap: 11px;
+    }
+  }
+}

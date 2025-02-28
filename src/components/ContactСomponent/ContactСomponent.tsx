@@ -58,7 +58,6 @@ const Contact_Component: React.FC = () => {
             type='text'
             className={styles.input}
             placeholder={t.contact('placeholderEmail')}
-            required
             onChange={handleChange}
             value={name}
           />

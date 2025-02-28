@@ -8,9 +8,10 @@ import Image from 'next/image';
 interface BuyCardProps {
   quantity: string;
   price: string;
+  link: string;
 }
 
-function BuyCard({ quantity, price }: BuyCardProps) {
+function BuyCard({ quantity, price, link }: BuyCardProps) {
   const t = useTranslations('buyandsell');
 
   return (
@@ -32,12 +33,12 @@ function BuyCard({ quantity, price }: BuyCardProps) {
           <div className={styles.card__text}>
             <p>{t('card.price')}:</p>
             <p className={styles.card__numbers}>
-              {`${price}`}
+              {`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}`}
               <span> usdt</span>
             </p>
           </div>
           <div className={styles.buttonContainer}>
-            <Button text={t('card.button')} link='' className={styles.button} />
+            <Button text={t('card.button')} link={link} className={styles.button} />
           </div>
         </div>
       </div>

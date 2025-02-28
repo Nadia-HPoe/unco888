@@ -30,11 +30,23 @@
         gap: 18px;
     }
     &__image {
+        position: relative;
         width: 120px;
         height: 80px;
         border-radius: 18px;
         border: 1px solid var.$gold;
         background: var.$bg-primary-gradient;
+        overflow: hidden;
+
+        .image {
+            object-fit: cover;
+            border-radius: 18px;
+
+            &.placeholder {
+                object-fit: contain;
+                padding: 20px;
+            }
+        }
     }
     &__title {
         color: var.$dark-purple;

@@ -59,11 +59,19 @@
   background-image: url(/images/Footer/linkedin.svg);
 }
 .socials__icon_5 {
-  background-image: url(/images/Footer/twitter.svg);
-}
-.socials__icon_6 {
   background-image: url(/images/Footer/youtube.svg);
   width: 50px;
+}
+.socials__icon_6 {
+  background-image: url(/images/Footer/discord.svg);
+}
+
+.socials__icon_7 {
+  background-image: url(/images/Footer/twitter.svg);
+}
+
+.socials__icon_8 {
+  background-image: url(/images/Footer/tiktok.svg);
 }
 
 .info {
@@ -284,6 +292,14 @@
   }
 }
 
+@media (max-width: 550px) {
+  .socials__wrapper_mobile {
+    display: grid;
+    grid-gap: 22px;
+    grid-template-columns: repeat(4, 50px);
+  }
+}
+
 @media (max-width: 450px) {
   .footer {
     padding: 60px 16px;
@@ -308,14 +324,6 @@
   .contacts {
     gap: 28px;
     padding-right: 0;
-  }
-
-  .socials__link {
-    width: clamp(2.188rem, 5vw + 1.094rem, 2.5rem);
-    height: clamp(2.188rem, 5vw + 1.094rem, 2.5rem);
-  }
-  .socials__icon_6 {
-    width: clamp(2.813rem, 5vw + 1.719rem, 3.125rem);
   }
 
   .nav_mobile {

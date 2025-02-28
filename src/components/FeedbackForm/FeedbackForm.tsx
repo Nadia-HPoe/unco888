@@ -1,6 +1,7 @@
 'use client';
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { sendFeedback } from '@/app/[locale]/actions';
 import ModalComponent from '@/components/ModalСomponent/ModalСomponent';
 import Button3 from '@/components/Button3/Button3';
 import styles from '@/components/FeedbackForm/FeedbackForm.module.scss';
@@ -43,10 +44,31 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
     setIsAgreed(event.target.checked);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log({ name, photo, message });
-    closeModal();
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await sendFeedback(
+        name,
+        message,
+        photo,
+        'FALSE'
+      );
+
+      if (response.status !== 200) {
+        throw new Error(response.error || 'Failed to send feedback');
+      }
+
+      console.log('Success:', response);
+
+      setName('');
+      setMessage('');
+      setPhoto(null);
+      closeModal();
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const handleBlur = (fieldName: 'name' | 'message') => {

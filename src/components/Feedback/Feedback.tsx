@@ -7,11 +7,13 @@ import Button3 from '@/components/Button3/Button3';
 import FeedbackCard from './FeedbackCard/FeedbackCard';
 import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 import FeedbackPopup from './FeedbackPopup/FeedbackPopup';
+import { loadFeedback } from '@/app/[locale]/actions';
+import { FeedbackRecords, transformFeedback } from '@/functions/transformFeedback';
 
 interface FeedbackItem {
   name: string;
-  age: string;
-  text: string;
+  message: string,
+  photo: string;
 }
 
 const toggleBodyScroll = (disable: boolean) => {
@@ -25,39 +27,21 @@ const toggleBodyScroll = (disable: boolean) => {
 const Feedback: React.FC = () => {
   const t = useTranslations('feedback');
   const sliderRef = useRef<HTMLDivElement | null>(null);
+  const [feedbackData, setfeedbackData] = useState<FeedbackRecords[]>([]);
 
-  const feedbackData: FeedbackItem[] = [
-    {
-      name: 'Name1',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. . Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-    {
-      name: 'Name2',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-    {
-      name: 'Name3',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-    {
-      name: 'Name4',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-    {
-      name: 'Name5',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-    {
-      name: 'Name6',
-      age: 'age',
-      text: 'Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan. Nnibh ornare accumsan.',
-    },
-  ];
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await loadFeedback();
+        if (res && res.status === 200 && res.data) {
+          setfeedbackData(transformFeedback(res.data));
+        }
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   const handleScroll = (direction: 'left' | 'right') => {
     const slider = sliderRef.current;
@@ -113,8 +97,8 @@ const Feedback: React.FC = () => {
               <FeedbackCard
                 key={index}
                 name={feedback.name}
-                age={feedback.age}
-                text={feedback.text}
+                photo={feedback.photo}
+                message={feedback.message}
                 onClick={() => openPopup(feedback)}
               />
             ))}
