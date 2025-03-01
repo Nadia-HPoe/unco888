@@ -11,11 +11,11 @@ export interface TransformedObject {
   [key: string]: string;
 }
 
-const GOOGLE_SHEET_SELLOFFERS_RANGE = process.env.GOOGLE_SHEET_SELLOFFERS_RANGE;
-const GOOGLE_SHEET_QA_RANGE = process.env.GOOGLE_SHEET_QA_RANGE;
-const GOOGLE_SHEET_CONTACT_US_RANGE = process.env.GOOGLE_SHEET_CONTACT_US_RANGE;
-const GOOGLE_SHEET_FEEDBACK_RANGE = process.env.GOOGLE_SHEET_FEEDBACK_RANGE;
-const GOOGLE_SHEET_NEWS_RANGE = process.env.GOOGLE_SHEET_NEWS_RANGE;
+const NEXT_PUBLIC_SHEET_SELLOFFERS_RANGE = process.env.NEXT_PUBLIC_SHEET_SELLOFFERS_RANGE;
+const NEXT_PUBLIC_SHEET_QA_RANGE = process.env.NEXT_PUBLIC_SHEET_QA_RANGE;
+const NEXT_PUBLIC_SHEET_CONTACT_US_RANGE = process.env.NEXT_PUBLIC_SHEET_CONTACT_US_RANGE;
+const NEXT_PUBLIC_SHEET_FEEDBACK_RANGE = process.env.NEXT_PUBLIC_SHEET_FEEDBACK_RANGE;
+const NEXT_PUBLIC_SHEET_NEWS_RANGE = process.env.NEXT_PUBLIC_SHEET_NEWS_RANGE;
 
 const transformData = (data: Data): TransformedObject[] => {
   const headers: string[] = data[0];
@@ -33,7 +33,7 @@ const transformData = (data: Data): TransformedObject[] => {
 };
 
 export const loadSellOffers = async () => {
-  const { sheets, spreadsheetId, range } = await initGoogleAPI(GOOGLE_SHEET_SELLOFFERS_RANGE);
+  const { sheets, spreadsheetId, range } = await initGoogleAPI(NEXT_PUBLIC_SHEET_SELLOFFERS_RANGE);
 
   if (sheets) {
     try {
@@ -63,7 +63,7 @@ export const sendSellOffer = async (
     if (!sheets) throw new Error('Server error');
     const sheetsRes = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: GOOGLE_SHEET_SELLOFFERS_RANGE,
+      range: NEXT_PUBLIC_SHEET_SELLOFFERS_RANGE,
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[`${uuidv4()}`, quantity, price, link, contact, visible]],
@@ -81,10 +81,8 @@ export const sendSellOffer = async (
   return { status: 500, error: '' };
 };
 
-
-
 export const loadNews = async () => {
-  const { sheets, spreadsheetId, range } = await initGoogleAPI(GOOGLE_SHEET_NEWS_RANGE);
+  const { sheets, spreadsheetId, range } = await initGoogleAPI(NEXT_PUBLIC_SHEET_NEWS_RANGE);
   if (sheets) {
     try {
       const getRows = await sheets.spreadsheets.values.get({
@@ -101,7 +99,7 @@ export const loadNews = async () => {
 };
 
 export const loadFeedback = async () => {
-  const { sheets, spreadsheetId, range } = await initGoogleAPI(GOOGLE_SHEET_FEEDBACK_RANGE);
+  const { sheets, spreadsheetId, range } = await initGoogleAPI(NEXT_PUBLIC_SHEET_FEEDBACK_RANGE);
 
   if (sheets) {
     try {
@@ -119,7 +117,7 @@ export const loadFeedback = async () => {
 };
 
 export const getQaData = async () => {
-  const { sheets, spreadsheetId, range } = await initGoogleAPI(GOOGLE_SHEET_QA_RANGE);
+  const { sheets, spreadsheetId, range } = await initGoogleAPI(NEXT_PUBLIC_SHEET_QA_RANGE);
 
   if (sheets) {
     try {
@@ -170,7 +168,7 @@ export const sendFeedback = async (
         requestBody: {
           name: `${submissionId}_${photo.name}`,
           mimeType: photo.type,
-          parents: [process.env.GOOGLE_DRIVE_FOLDER_ID!],
+          parents: [process.env.NEXT_PUBLIC_DRIVE_FOLDER_ID!],
         },
         media: {
           mimeType: photo.type,
@@ -196,7 +194,7 @@ export const sendFeedback = async (
 
     const sheetsRes = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: GOOGLE_SHEET_FEEDBACK_RANGE,
+      range: NEXT_PUBLIC_SHEET_FEEDBACK_RANGE,
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[submissionId, name, photoUrl, message, visible]],
@@ -215,13 +213,13 @@ export const sendFeedback = async (
 };
 
 export const sendContactFormData = async (name: string, message: string) => {
-  const { sheets, spreadsheetId } = await initGoogleAPI(GOOGLE_SHEET_CONTACT_US_RANGE);
+  const { sheets, spreadsheetId } = await initGoogleAPI(NEXT_PUBLIC_SHEET_CONTACT_US_RANGE);
 
   try {
     if (!sheets) throw new Error('Server error');
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: GOOGLE_SHEET_CONTACT_US_RANGE,
+      range: NEXT_PUBLIC_SHEET_CONTACT_US_RANGE,
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[`${uuidv4()}`, name, message]],
