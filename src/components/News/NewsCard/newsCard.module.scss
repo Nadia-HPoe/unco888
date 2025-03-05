@@ -1,4 +1,8 @@
-@use '../../../styles/_var' as var;
+@use "../../../styles/_var" as var;
+
+.links {
+  color: var.$dark-purple;
+}
 
 .card {
   flex: 0 0 auto;

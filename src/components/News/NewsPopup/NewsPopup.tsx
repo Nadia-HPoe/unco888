@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { cn } from '@/functions/cn';
 import Image from 'next/image';
 import styles from './newsPopup.module.scss';
+import useSearchLinks from '@/hooks/useSearchLinks';
+import { formatTextWithPoints } from '@/functions/formatLinksStylesNews';
 
 interface NewsCardPopupProps {
   news: {
@@ -40,6 +42,8 @@ const transformGoogleDriveLink = (url: string) => {
 };
 
 const NewsCardPopup: React.FC<NewsCardPopupProps> = ({ news, onClose }) => {
+  const getSearchLinks = useSearchLinks;
+
   const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
       onClose();
@@ -56,6 +60,8 @@ const NewsCardPopup: React.FC<NewsCardPopupProps> = ({ news, onClose }) => {
     { key: 'link_tw', url: news.link_tw },
     { key: 'link_yt', url: news.link_yt },
   ].filter((item) => item.url);
+
+  const formattedText = formatTextWithPoints(news.text);
 
   return (
     <div className={styles.popup} onClick={handleBackgroundClick}>
@@ -74,7 +80,9 @@ const NewsCardPopup: React.FC<NewsCardPopupProps> = ({ news, onClose }) => {
           width={436}
           height={209}
         />
-        <p className={styles.popup__text}>{news.text}</p>
+        <div className={styles.popup__text} style={{ whiteSpace: 'pre-wrap' }}>
+          {getSearchLinks(formattedText, false, styles.links)}
+        </div>
         <div className={styles.popup__bottom}>
           <div className={styles.socials__wrapper}>
             {socialLinks.map(({ key, url }) => (
