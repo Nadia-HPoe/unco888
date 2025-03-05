@@ -60,7 +60,7 @@ const QandA: React.FC = () => {
                 <p
                   className={`${styles.explanation} ${activeBlock === index ? styles.explanationActive : ''}`}
                 >
-                  {getSearchLinks(item.answer, false)}
+                  {getSearchLinks(item.answer, true, styles.linksUnco)}
                 </p>
               </div>
             </div>

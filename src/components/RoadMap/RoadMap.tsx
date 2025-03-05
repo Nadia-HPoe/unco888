@@ -1,13 +1,13 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import RoadMapMobile from "./RoadMapMobile";
-import styles from "./roadMap.module.scss";
-import useSearchLinks from "@/hooks/useSearchLinks";
-import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import { RoadMapData, RoadMapKeys } from "@/constants/RoadMapData";
-import { useWindowSize } from "@/hooks/useWindowSize";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import RoadMapMobile from './RoadMapMobile';
+import styles from './roadMap.module.scss';
+import useSearchLinks from '@/hooks/useSearchLinks';
+import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
+import { RoadMapData, RoadMapKeys } from '@/constants/RoadMapData';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 const RoadMap = () => {
   const t = useTranslations('textRoadMap');
@@ -38,13 +38,20 @@ const RoadMap = () => {
 
       {RoadMapData.map((item, index) =>
         imageSize === 'img390' ? (
-          <RoadMapMobile item={item} imageSize={imageSize} key={index} getSearchLinks={getSearchLinks}/>
+          <RoadMapMobile
+            item={item}
+            imageSize={imageSize}
+            key={index}
+            getSearchLinks={getSearchLinks}
+          />
         ) : (
           <div key={index} className={styles.content}>
             <div
               className={`${styles.container_wrapper_content} ${item.style === 'reverse' ? styles.container_wrapper_content_reverse : ''}`}
             >
-              <div className={styles.text}>{getSearchLinks(t(item.text))}</div>
+              <div className={styles.text}>
+                {getSearchLinks(t(item.text), true, styles.linksUnco)}
+              </div>
               <div
                 className={`${styles.container_year} ${item.style === 'reverse' ? styles.container_year_reverse : ''}`}
               >

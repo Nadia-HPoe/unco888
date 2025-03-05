@@ -1,5 +1,14 @@
 @use '../../styles/_var' as var;
 
+.linksUnco {
+  text-decoration: none;
+  color: rgb(167, 221, 224);
+}
+
+.linksUnco:hover {
+  text-decoration: underline rgb(167, 221, 224);
+}
+
 .main {
   display: flex;
   flex-direction: column;
