@@ -102,9 +102,9 @@
 .review {
     padding: 21px 40px;
     margin: 0 auto;
-    min-width: 376px;
+    height: 68px;
+    width: 380px;
 }
-
 
 
 @media (max-width: 1440px) {
@@ -161,8 +161,8 @@
             gap: 50px;
         }
     }
-    .button {
-        width: clamp(21.875rem, 64.865vw + 6.064rem, 36.875rem);
+    .review {
+        width: clamp(20.625rem, 13.7026rem + 29.9346vw, 49.25rem);
         height: 54px;
     }
 }
@@ -179,8 +179,5 @@
         &__btns {
             display: none;
         }
-    }
-    .button {
-        min-width: 100%;
     }
 }

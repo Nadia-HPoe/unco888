@@ -5,19 +5,17 @@
   background: rgba(187, 185, 185, 0.007);
   color: $gray;
   width: 760px;
-  height: 600px;
+  height: fit-content;
   border-radius: 14px;
   background: $bg-primary-gradient;
   font-family: $font-montserrat;
 
   @media (max-width: 760px) {
     width: 345px;
-    height: 657px;
   }
 
   @media (max-width: 390px) {
     width: 320px;
-    height: 580px;
   }
 }
 
@@ -127,7 +125,7 @@
 }
 
 .footer {
-  margin-top: 30px;
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
 
@@ -313,4 +311,22 @@
 
 .error {
   border: 2px solid red;
+}
+
+.recaptcha_container {
+  margin: 0 auto;
+  max-width: 340px;
+  height: 74px;
+  text-align: center;
+
+  @media (max-width: 760px) {
+    height: 130px;
+  }
+}
+
+.loading {
+  padding-top: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
 }

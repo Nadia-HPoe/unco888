@@ -5,6 +5,9 @@ import { sendFeedback } from '@/app/[locale]/actions';
 import ModalComponent from '@/components/ModalСomponent/ModalСomponent';
 import Button3 from '@/components/Button3/Button3';
 import styles from '@/components/FeedbackForm/FeedbackForm.module.scss';
+import { useRecaptcha } from '@/hooks/useRecaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useMediaQuery } from 'react-responsive';
 
 type FeedbackFormProps = {
   isOpen: boolean;
@@ -13,6 +16,9 @@ type FeedbackFormProps = {
 
 const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
   const t = useTranslations('feedbackForm');
+  const { recaptchaRef, recaptchaToken, resetRecaptcha, isLoading, setRecaptchaToken } = useRecaptcha({
+    isOpen
+  });
 
   const [name, setName] = useState<string>('');
   const [photo, setPhoto] = useState<File | null>(null);
@@ -22,12 +28,15 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
     name: false,
     message: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 760px)' })
 
   const closeModal = () => {
     setName('');
     setPhoto(null);
     setMessage('');
     setIsAgreed(false);
+    resetRecaptcha();
     setTouchedFields({
       name: false,
       message: false,
@@ -47,12 +56,20 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
+    if (!recaptchaToken) {
+      console.error('Please complete the reCAPTCHA verification');
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
       const response = await sendFeedback(
         name,
         message,
         photo,
-        'FALSE'
+        'FALSE',
+        recaptchaToken
       );
 
       if (response.status !== 200) {
@@ -68,6 +85,8 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
 
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -82,11 +101,11 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
     setPhoto(null);
   }
 
-  const isFormValid = name.trim() !== '' && message.trim() !== '' && isAgreed;
+  const isFormValid = name.trim() !== '' && message.trim() !== '' && isAgreed && recaptchaToken !== '';
 
   return (
     <ModalComponent isOpen={isOpen} onRequestClose={closeModal}>
-      <form className={styles.feedback_form}>
+      <form className={styles.feedback_form} onSubmit={handleSubmit}>
         <div className={styles.container_feedback_form}>
           <button type='button' className={styles.close} onClick={closeModal} />
           <div>
@@ -111,7 +130,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
                 <div className={styles.photo_icon}>
                   <img src='/images/Feedback/add-a-photo-outline.svg' alt='' />
                 </div>
-                {photo ? <></> :  <p className={styles.photo_text}>{t('labelPhoto')}</p> }
+                {photo ? <></> : <p className={styles.photo_text}>{t('labelPhoto')}</p>}
               </label>
               <input
                 className={styles.hidden}
@@ -146,6 +165,17 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
             />
           </div>
         </div>
+        <div className={styles.recaptcha_container}>
+          {isLoading ?
+            (<div className={styles.loading}>Loading reCAPTCHA...</div>)
+          : (<ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_TOKEN!}
+              theme='dark'
+              size={isTabletOrMobile? 'compact' : 'normal'}
+              onChange={(token) => setRecaptchaToken(token || '')}
+            />)}
+        </div>
         <footer className={styles.footer}>
           <label className={styles.container_agree} htmlFor='agree'>
             <input
@@ -161,8 +191,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
           <Button3
             className={`${styles.button} ${styles.submit}`}
             type='submit'
-            onClick={handleSubmit}
-            disabled={!isFormValid}
+            disabled={!isFormValid || isSubmitting}
             text={t('btnText')}
           />
         </footer>
