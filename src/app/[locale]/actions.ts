@@ -3,6 +3,7 @@
 import { initGoogleAPI } from '@/server-actions/google-sheets';
 import { v4 as uuidv4 } from 'uuid';
 import { Readable } from 'stream';
+import { verifyRecaptcha } from '@/server-actions/recaptcha';
 
 type DataRow = string[];
 type Data = DataRow[];
@@ -153,6 +154,15 @@ export const sendFeedback = async (
   visible: 'FALSE' = 'FALSE',
   recaptchaToken: string
 ) => {
+  const recaptchaData = await verifyRecaptcha(recaptchaToken);
+
+  if (!recaptchaData.success) {
+    return {
+      status: 400,
+      error: `reCAPTCHA verification failed: ${JSON.stringify(recaptchaData['error-codes'] || 'no error codes')}`,
+    };
+  }
+
   const { sheets, spreadsheetId } = await initGoogleAPI();
   const { drive } = await initGoogleAPI();
   const submissionId = `SUBM_${uuidv4()}`;
@@ -160,29 +170,10 @@ export const sendFeedback = async (
   try {
     if (!sheets) throw new Error('Server error');
 
-    const verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
-    const recaptchaResponse = await fetch(verifyUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        secret: process.env.RECAPTCHA_SECRET_KEY || '',
-        response: recaptchaToken,
-      }),
-    });
-
-    const recaptchaData = await recaptchaResponse.json();
-
-    if (!recaptchaData.success) {
-      return { status: 400, error: 'reCAPTCHA verification failed' };
-    }
-
     let photoUrl = '';
     if (photo) {
       const photoBuffer = Buffer.from(await photo.arrayBuffer());
       const photoStream = await bufferToStream(photoBuffer);
-
       const driveResponse = await drive?.files.create({
         requestBody: {
           name: `${submissionId}_${photo.name}`,

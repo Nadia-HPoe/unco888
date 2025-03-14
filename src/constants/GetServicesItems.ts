@@ -101,7 +101,7 @@ export const servicesItems = [
     src: '/images/Services/food-futures_net.png',
     name: 'food futures',
     link: 'https://foodfutures.net',
-    button_title: 'UNCO',
+    button_title: '',
     button_text: 'Food Futures',
     width: 465,
     height: 310,

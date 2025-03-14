@@ -1,15 +1,17 @@
 import styles from './feedbackCard.module.scss';
 import Image from 'next/image';
 import noPhoto from '../../../../public/images/Feedback/no-photo.svg';
+import useSearchLinks from '@/hooks/useSearchLinks';
 
 interface FeedbackCardProps {
   name: string;
-  message: string,
+  message: string;
   photo: string;
   onClick: () => void;
 }
 
 function FeedbackCard({ name, message, photo, onClick }: FeedbackCardProps) {
+  const getSearchLinks = useSearchLinks;
   const transformGoogleDriveLink = (url: string) => {
     const match = url.match(/\/d\/(.*?)\//);
     return match ? `https://drive.google.com/uc?export=view&id=${match[1]}` : url;
@@ -23,14 +25,14 @@ function FeedbackCard({ name, message, photo, onClick }: FeedbackCardProps) {
             src={transformGoogleDriveLink(photo) || noPhoto}
             alt={name}
             fill
-            sizes="120px"
+            sizes='120px'
             className={`${styles.image} ${!photo ? styles.placeholder : ''}`}
-            loading="lazy"
+            loading='lazy'
           />
         </div>
         <h4 className={styles.card__title}>{name}</h4>
       </div>
-      <p className={styles.card__text}>{message}</p>
+      <p className={styles.card__text}>{getSearchLinks(message, false, styles.links)}</p>
     </div>
   );
 }

@@ -17,7 +17,10 @@ type FeedbackFormProps = {
 const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
   const t = useTranslations('feedbackForm');
   const { recaptchaRef, recaptchaToken, resetRecaptcha, isLoading, setRecaptchaToken } = useRecaptcha({
-    isOpen
+    isOpen,
+    onVerify: (token) => {
+      console.log('reCAPTCHA verified with token:', token.substring(0, 10) + '...');
+    }
   });
 
   const [name, setName] = useState<string>('');
@@ -75,8 +78,6 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
       if (response.status !== 200) {
         throw new Error(response.error || 'Failed to send feedback');
       }
-
-      console.log('Success:', response);
 
       setName('');
       setMessage('');
