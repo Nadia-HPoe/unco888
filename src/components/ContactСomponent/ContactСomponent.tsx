@@ -1,11 +1,10 @@
-"use client";
-import Button from "../Button/Button";
-import ContactForm from "../ContactForm/ContactForm";
-import ModalComponent from "../ModalСomponent/ModalСomponent";
-import React, { useMemo, useState } from "react";
-import styles from "./ContactСomponent.module.scss";
-import { useTranslations } from "next-intl";
-import { useWindowSize } from "@/hooks/useWindowSize";
+'use client';
+import Button from '../Button/Button';
+import ContactForm from '../ContactForm/ContactForm';
+import React, { useMemo, useState } from 'react';
+import styles from './ContactСomponent.module.scss';
+import { useTranslations } from 'next-intl';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 interface Translations {
   contact: (key: string) => string;
@@ -93,9 +92,7 @@ const Contact_Component: React.FC = () => {
           )}
         </form>
 
-        <ModalComponent isOpen={isModalOpen} onRequestClose={handleCloseModal}>
-          <ContactForm name={name} onClose={handleCloseModal} />
-        </ModalComponent>
+        <ContactForm isOpen={isModalOpen} name={name} onClose={handleCloseModal} />
       </div>
     </main>
   );

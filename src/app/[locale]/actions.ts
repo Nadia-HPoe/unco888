@@ -56,8 +56,18 @@ export const sendSellOffer = async (
   price: string,
   link: string,
   contact: string,
-  visible: boolean
+  visible: boolean,
+  recaptchaToken: string
 ) => {
+  const recaptchaData = await verifyRecaptcha(recaptchaToken);
+
+  if (!recaptchaData.success) {
+    return {
+      status: 400,
+      error: `reCAPTCHA verification failed: ${JSON.stringify(recaptchaData['error-codes'] || 'no error codes')}`,
+    };
+  }
+
   const { sheets, spreadsheetId } = await initGoogleAPI();
 
   try {
@@ -222,7 +232,20 @@ export const sendFeedback = async (
   }
 };
 
-export const sendContactFormData = async (name: string, message: string) => {
+export const sendContactFormData = async (
+  name: string,
+  message: string,
+  recaptchaToken: string
+) => {
+  const recaptchaData = await verifyRecaptcha(recaptchaToken);
+
+  if (!recaptchaData.success) {
+    return {
+      status: 400,
+      error: `reCAPTCHA verification failed: ${JSON.stringify(recaptchaData['error-codes'] || 'no error codes')}`,
+    };
+  }
+
   const { sheets, spreadsheetId } = await initGoogleAPI(NEXT_PUBLIC_SHEET_CONTACT_US_RANGE);
 
   try {
