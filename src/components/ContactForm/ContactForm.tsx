@@ -7,7 +7,7 @@ import { ChangeEvent, useState } from 'react';
 import { useRecaptcha } from '@/hooks/useRecaptcha';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useMediaQuery } from 'react-responsive';
-import ModalComponent from '@/components/ModalСomponent/ModalСomponent';
+import ModalComponent from '../ModalСomponent/ModalСomponent';
 
 type ContactFormProps = {
   isOpen: boolean;
